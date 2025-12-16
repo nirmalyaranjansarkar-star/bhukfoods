@@ -4,6 +4,7 @@ export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
 
 export const SUBSCRIPTION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd9DcmzwhkLPB989NtGE1SouGTwESEfHpl4kGrZbae8TquuYg/viewform';
 export const FREE_RESOURCES_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeOe-Qf2aUaeW7Rc0MB1e3m1qPpiUTYwQiprmuOzFGyCkS0og/viewform';
+export const NO_MEAL_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdqcl4jNWsBMzj6VF5rVJ2eks2CW86V5RuePucAYS6nUpc6nA/viewform?usp=header';
 
 export const POLICY_URLS = {
   terms: '/terms',
@@ -300,8 +301,8 @@ export const FAQS: FAQItem[] = [
     id: '2',
     question: 'Can I pause my subscription if I travel?',
     questionBn: 'আমি বাইরে গেলে কি সাবস্ক্রিপশন বন্ধ রাখতে পারি?',
-    answer: 'Yes! Inform us 24 hours in advance, and we will pause your subscription. Your unused meal credits will be carried forward to the next month or adjusted in the renewal.',
-    answerBn: 'হ্যাঁ! ২৪ ঘণ্টা আগে জানালে আমরা আপনার সাবস্ক্রিপশন পজ করে দেব। আপনার অব্যবহৃত মিলের টাকা পরের মাসে যোগ করা হবে বা রিনিউয়ালের সময় অ্যাডজাস্ট করা হবে।'
+    answer: 'Yes! Just fill our "No Meal Day Claim" form 24 hours in advance. We will pause your meal and you can claim a refund or carry forward the balance. No questions asked.',
+    answerBn: 'হ্যাঁ! ২৪ ঘণ্টা আগে আমাদের "নো মিল ডে ক্লেইম" ফর্মটি পূরণ করুন। আমরা আপনার খাবার বন্ধ রাখব এবং আপনি রিফান্ড বা ব্যালেন্স অ্যাডজাস্ট করতে পারবেন। কোনো প্রশ্ন করা হবে না।'
   },
   {
     id: '3',
@@ -505,8 +506,8 @@ export const PAIN_POINTS: PainPointItem[] = [
     titleBn: 'কাজের মাসির সমস্যা',
     problem: '"Didi aj asbo na..." or sudden demands for bonuses and holidays.',
     problemBn: '"দিদি আজ আসবো না..." অথবা হঠাৎ বোনাস বা ছুটির দাবি।',
-    solution: 'Zero dependency. We deliver 365 days, rain or shine.',
-    solutionBn: 'কারোর ওপর নির্ভর করতে হবে না। আমরা ৩৬৫ দিন খাবার পৌঁছে দিই।'
+    solution: 'Reliable 365-day delivery. Plus, use our "No Meal Day" form to get refunds for days you skip.',
+    solutionBn: '৩৬৫ দিন নিশ্চিত ডেলিভারি। আর যেদিন খাবেন না, "নো মিল ডে" ফর্ম ভরে টাকা ফেরত পান।'
   },
   {
     id: 'grocery',

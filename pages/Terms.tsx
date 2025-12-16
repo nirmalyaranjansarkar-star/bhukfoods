@@ -1,4 +1,5 @@
 import React from 'react';
+import { NO_MEAL_FORM_URL } from '../constants';
 
 const Terms: React.FC = () => {
   return (
@@ -39,11 +40,19 @@ const Terms: React.FC = () => {
           <section>
              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 border-b border-orange-100 dark:border-slate-700 pb-2">3. Meal Pausing & Carrying Forward</h2>
              <p className="mb-2">We understand you may travel or eat out. To pause your meal:</p>
-             <ul className="list-disc pl-6 space-y-2">
+             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>You must inform us via WhatsApp or Phone <strong>24 hours in advance</strong>.</li>
               <li>Same-day cancellations are not eligible for credit/refund as the ingredients would have already been procured.</li>
               <li>Credits for paused days will be adjusted in your next month's renewal bill.</li>
             </ul>
+            <a 
+              href={NO_MEAL_FORM_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md"
+            >
+              Fill No Meal Day Claim Form ↗
+            </a>
           </section>
 
           <section>

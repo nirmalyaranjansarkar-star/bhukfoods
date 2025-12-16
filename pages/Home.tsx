@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { TRANSLATIONS } from '../constants';
+import { TRANSLATIONS, NO_MEAL_FORM_URL } from '../constants';
 import Calculator from '../components/Calculator';
 import MarketWidget from '../components/MarketWidget';
 import Plans from '../components/Plans';
@@ -102,6 +102,31 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
       <section className="container mx-auto px-4 animate-on-scroll bg-[#FFF8E1] dark:bg-slate-950 transition-colors duration-500">
         <MarketWidget lang={lang} />
         <LeadGen lang={lang} />
+      </section>
+
+      {/* Flexibility Guarantee Marketing Section */}
+      <section className="bg-green-50 dark:bg-green-900/10 py-12 border-y border-green-100 dark:border-green-800/30">
+        <div className="container mx-auto px-4 text-center">
+           <div className="inline-block bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 animate-pulse">
+             {lang === 'bn' ? 'টাকা ফেরত গ্যারান্টি' : 'Money Back Guarantee'}
+           </div>
+           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+             {lang === 'bn' ? 'যতটুকু খাবেন, ততটুকুই দেবেন' : 'Don\'t Pay For Food You Don\'t Eat'}
+           </h2>
+           <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6 text-lg">
+             {lang === 'bn' 
+               ? 'বাইরে খাচ্ছেন? আমাদের "নো মিল ডে" ফর্মটি পূরণ করুন এবং টাকা ফেরত পান। কোনো প্রশ্ন করা হবে না।' 
+               : 'Eating out today? Just fill our "No Meal Day" form 24 hours in advance and get a refund or credit. No questions asked.'}
+           </p>
+           <a 
+             href={NO_MEAL_FORM_URL} 
+             target="_blank" 
+             rel="noopener noreferrer"
+             className="inline-flex items-center font-bold text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors border-b-2 border-green-500"
+           >
+             View Claim Form <span className="ml-1">→</span>
+           </a>
+        </div>
       </section>
 
       <section id="plans" className="py-20 bg-[#FFF8E1] dark:bg-slate-950 transition-colors duration-500">

@@ -14,7 +14,7 @@ import Privacy from './pages/Privacy';
 import BhukLogo from './components/BhukLogo';
 import VisitorCounter from './components/VisitorCounter';
 import { Language } from './types';
-import { TRANSLATIONS, POLICY_URLS } from './constants';
+import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL } from './constants';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -173,7 +173,8 @@ const App: React.FC = () => {
               
               <div className="my-2 border-t border-slate-100 dark:border-slate-800"></div>
               
-              <div className="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Policies</div>
+              <div className="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Quick Links</div>
+              <a href={NO_MEAL_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu} className="block py-2 px-4 text-green-600 dark:text-green-400 font-bold hover:text-green-700">No Meal Day Claim Form</a>
               <Link to="/terms" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_terms}</Link>
               <Link to="/refund" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_refund}</Link>
               <Link to="/privacy" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_privacy}</Link>
@@ -211,7 +212,7 @@ const App: React.FC = () => {
         <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
            <div className="container mx-auto px-4">
              <div className="grid md:grid-cols-4 gap-8 mb-8">
-               <div className="col-span-1 md:col-span-2">
+               <div className="col-span-1 md:col-span-1">
                  <div className="text-2xl font-bold text-white mb-1"><span className="text-[#D32F2F]">Bhuk</span>Foods</div>
                  <div className="text-[#D32F2F] text-xs font-bold uppercase tracking-widest mb-4 opacity-80">{t.tagline}</div>
                  <p className="max-w-xs text-sm leading-relaxed">India's First Kitchen Substitution Service. Replacing groceries, maids, and cooking with healthy, home-style deliveries.</p>
@@ -222,6 +223,14 @@ const App: React.FC = () => {
                    <li><Link to="/agarpara" className="hover:text-[#D32F2F]">Agarpara</Link></li>
                    <li><Link to="/sodepur" className="hover:text-[#D32F2F]">Sodepur</Link></li>
                    <li><Link to="/belgharia" className="hover:text-[#D32F2F]">Belgharia</Link></li>
+                 </ul>
+               </div>
+               <div>
+                 <h4 className="text-white font-bold mb-4">Quick Links</h4>
+                 <ul className="space-y-2 text-sm">
+                   <li><a href={NO_MEAL_FORM_URL} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 font-semibold flex items-center gap-1">No Meal Day Claim ↗</a></li>
+                   <li><Link to="/terms" className="hover:text-[#D32F2F]">Terms & Conditions</Link></li>
+                   <li><Link to="/refund" className="hover:text-[#D32F2F]">Refund Policy</Link></li>
                  </ul>
                </div>
              </div>
