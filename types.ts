@@ -2,6 +2,7 @@ export type Language = 'en' | 'bn';
 
 export interface Plan {
   id: string;
+  type: 'subscription' | 'onetime';
   name: string;
   nameBn: string;
   price: number;
@@ -95,4 +96,20 @@ export interface ComparisonRow {
   selfBn: string;
   maid: string;
   maidBn: string;
+}
+
+export interface Recipe {
+  id: string;
+  title: string;
+  titleBn: string;
+  description: string;
+  descriptionBn: string;
+  image: string;
+  prepTime: string;
+  servings: string;
+  ingredients: string[];
+  ingredientsBn: string[];
+  instructions: string[];
+  instructionsBn: string[];
+  tags: string[];
 }

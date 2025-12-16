@@ -1,4 +1,4 @@
-import { Plan, MarketItem, FAQItem, Testimonial, ResourceItem, BlogPost, GalleryItem, PainPointItem, ComparisonRow } from './types';
+import { Plan, MarketItem, FAQItem, Testimonial, ResourceItem, BlogPost, GalleryItem, PainPointItem, ComparisonRow, Recipe } from './types';
 
 export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
 
@@ -20,7 +20,21 @@ export const MARKET_DATA: MarketItem[] = [
 
 export const PLANS: Plan[] = [
   {
+    id: 'guest',
+    type: 'onetime',
+    name: 'Guest Meal (One-Time)',
+    nameBn: 'গেস্ট মিল (একবার)',
+    price: 75,
+    perMeal: 75,
+    features: ['Lunch or Dinner Choice', 'Fine Rice / Roti', 'Seasonal Sabji + Dal', 'Fish / Chicken / Egg', 'Premium Foil Packing'],
+    featuresBn: ['দুপুর বা রাতের খাবার', 'সরু চালের ভাত / রুটি', 'সবজি + ডাল', 'মাছ / মাংস / ডিম', 'প্রিমিয়াম ফয়েল প্যাকিং'],
+    bestFor: 'Trial / Guests',
+    bestForBn: 'ট্রায়াল / অতিথি',
+    image: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
     id: 'student',
+    type: 'subscription',
     name: 'Student Saver',
     nameBn: 'স্টুডেন্ট সেভার',
     price: 2800,
@@ -33,6 +47,7 @@ export const PLANS: Plan[] = [
   },
   {
     id: 'professional',
+    type: 'subscription',
     name: 'Office Ready',
     nameBn: 'অফিস রেডি',
     price: 3500,
@@ -45,6 +60,7 @@ export const PLANS: Plan[] = [
   },
   {
     id: 'senior',
+    type: 'subscription',
     name: 'Senior Lite',
     nameBn: 'সিনিয়র লাইট',
     price: 3000,
@@ -127,6 +143,113 @@ export const COMPARISON_DATA: ComparisonRow[] = [
     selfBn: 'গ্যাস + অপচয়',
     maid: 'Bonuses/Leaves',
     maidBn: 'বোনাস/ছুটি'
+  }
+];
+
+export const RECIPES: Recipe[] = [
+  {
+    id: 'dada-boudi-biryani',
+    title: 'Dada Boudir Mutton Biryani',
+    titleBn: 'দাদা বৌদির মটন বিরিয়ানি',
+    description: 'The legendary Barrackpore style biryani known for its massive mutton pieces and subtle aroma.',
+    descriptionBn: ' ব্যারাকপুরের বিখ্যাত বিরিয়ানি, যা তার বিশাল মটন পিস এবং সুন্দর গন্ধের জন্য পরিচিত।',
+    image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=1000',
+    prepTime: '2 hrs',
+    servings: '4',
+    ingredients: ['1kg Mutton (Large Cuts)', '750g Basmati Rice', '4 Potatoes (Large)', 'Yogurt, Ginger-Garlic Paste', 'Secret Biryani Masala', 'Rose Water & Keora Water'],
+    ingredientsBn: ['১ কেজি মটন (বড় টুকরো)', '৭৫০ গ্রাম বাসমতি চাল', '৪টি বড় আলু', 'টক দই, আদা-রসুন বাটা', 'সিক্রেট বিরিয়ানি মশলা', 'গোলাপ জল ও কেওড়া জল'],
+    instructions: [
+      'Marinate mutton with yogurt, raw papaya paste, and spices for 4 hours.',
+      'Cook the mutton in ghee until 80% done. Keep the gravy (yakhni).',
+      'Boil rice with whole spices until 70% cooked.',
+      'Layering: Put mutton and potatoes at the bottom, add rice on top.',
+      'Pour saffron milk and ghee. Seal with dough (Dum) and cook on slow fire for 45 mins.'
+    ],
+    instructionsBn: [
+      'মটন টক দই, কাঁচা পেঁপে বাটা এবং মশলা দিয়ে ৪ ঘণ্টা ম্যারিনেট করুন।',
+      'ঘিয়ে মটন ৮০% রান্না করুন। ঝোল (আখনি) আলাদা রাখুন।',
+      'গোটা মশলা দিয়ে চাল ৭০% সেদ্ধ করুন।',
+      'লেয়ারিং: নিচে মটন এবং আলু দিন, উপরে চাল দিন।',
+      'জাফরান দুধ এবং ঘি ছড়িয়ে দিন। আটা দিয়ে সিল করে ৪৫ মিনিট দমে রাখুন।'
+    ],
+    tags: ['Kolkata Special', 'Non-Veg', 'Biryani']
+  },
+  {
+    id: 'rajasthani-rogan-josh',
+    title: 'Rajasthani Laal Maas (Rogan Josh)',
+    titleBn: 'রাজস্থানি লাল মাস (রোগান জোশ)',
+    description: 'A fiery red meat curry cooked in the traditional Rajasthani style with Mathania chilies.',
+    descriptionBn: 'মাথানিয়া লঙ্কা দিয়ে রাজস্থানি স্টাইলে তৈরি ঝাল লাল মাংসের ঝোল।',
+    image: 'https://images.unsplash.com/photo-1574653853027-5386a527c17f?q=80&w=1000',
+    prepTime: '1.5 hrs',
+    servings: '3',
+    ingredients: ['500g Mutton', 'Mathania Red Chilies (Paste)', 'Ghee (Lots of it)', 'Yogurt', 'Whole Spices (Cloves, Cardamom)'],
+    ingredientsBn: ['৫০০ গ্রাম মটন', 'মাথানিয়া শুকনো লঙ্কা (বাটা)', 'ঘি (প্রচুর পরিমাণে)', 'টক দই', 'গোটা গরম মশলা'],
+    instructions: [
+      'Heat abundant Ghee and crackle whole spices.',
+      'Fry sliced onions until golden brown.',
+      'Add mutton and sear on high heat to lock juices.',
+      'Add the red chili paste and beaten yogurt. Cook till oil separates.',
+      'Simmer on low heat until the meat is tender and the oil (Rogan) floats on top.'
+    ],
+    instructionsBn: [
+      'প্রচুর ঘি গরম করে গোটা মশলা ফোড়ন দিন।',
+      'পেঁয়াজ লাল করে ভেজে নিন।',
+      'মটন দিন এবং উচ্চ তাপে ভাজুন।',
+      'লঙ্কা বাটা এবং ফেটানো টক দই মেশান। তেল ছাড়া পর্যন্ত কষান।',
+      'কম আঁচে কষান যতক্ষণ না মাংস নরম হয় এবং তেল (রোগান) উপরে ভেসে ওঠে।'
+    ],
+    tags: ['Spicy', 'Royal', 'Curry']
+  },
+  {
+    id: 'kfc-chicken',
+    title: 'KFC Style Crispy Chicken',
+    titleBn: 'KFC স্টাইল ক্রিস্পি চিকেন',
+    description: 'Homemade version of the world-famous fried chicken with the secret 11 herbs and spices.',
+    descriptionBn: 'বিশ্ববিখ্যাত ফ্রায়েড চিকেনের ঘরোয়া সংস্করণ, সিক্রেট মশলা দিয়ে তৈরি।',
+    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1000',
+    prepTime: '45 mins',
+    servings: '2',
+    ingredients: ['Chicken Drumsticks/Wings', 'Buttermilk', 'All-Purpose Flour (Maida)', 'White Pepper, Garlic Powder', 'Paprika, Oregano, Dried Basil'],
+    ingredientsBn: ['চিকেন লেগ/উইংস', 'বাটারমিল্ক', 'ময়দা', 'সাদা গোলমরিচ, রসুন গুঁড়ো', 'পাপ্রিকা, ওরেগানো, তুলসি পাতা গুঁড়ো'],
+    instructions: [
+      'Soak chicken in buttermilk for 2 hours (makes it juicy).',
+      'Mix flour with all dry herbs and spices.',
+      'Coat chicken in flour -> dip in egg/milk wash -> coat in flour again.',
+      'Deep fry at 170°C for 12-15 minutes until golden brown and crispy.'
+    ],
+    instructionsBn: [
+      'চিকেন বাটারমিল্কে ২ ঘণ্টা ভিজিয়ে রাখুন (জুসি করার জন্য)।',
+      'ময়দার সাথে সব শুকনো মশলা ও হার্বস মেশান।',
+      'চিকেন কোট করুন: ময়দা -> ডিম/দুধ -> আবার ময়দা।',
+      'সোনালী এবং মচমচে না হওয়া পর্যন্ত ছাঁকা তেলে ১২-১৫ মিনিট ভাজুন।'
+    ],
+    tags: ['Fast Food', 'Kids Favorite', 'Fried']
+  },
+  {
+    id: 'mc-chicken-burger',
+    title: 'McDonald\'s Chicken Burger',
+    titleBn: 'ম্যাকডোনাল্ডস চিকেন বার্গার',
+    description: 'The classic McChicken style burger with a peppery patty, mayonnaise, and iceberg lettuce.',
+    descriptionBn: 'ক্লাসিক ম্যাকচিকেন স্টাইল বার্গার, সাথে মেয়োনিজ এবং লেটুস।',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000',
+    prepTime: '30 mins',
+    servings: '2',
+    ingredients: ['Minced Chicken', 'Burger Buns (Sesame)', 'Mayonnaise', 'Iceberg Lettuce (Shredded)', 'Breadcrumbs', 'Black Pepper'],
+    ingredientsBn: ['চিকেন কিমা', 'বার্গার বন', 'মেয়োনিজ', 'আইসবার্গ লেটুস (কুচানো)', 'ব্রেডক্রাম্বস', 'কালো গোলমরিচ'],
+    instructions: [
+      'Mix minced chicken with pepper and salt. Shape into round flat patties.',
+      'Coat patties in breadcrumbs and deep fry.',
+      'Toast the buns slightly on a tawa.',
+      'Assemble: Bun bottom -> Fried Patty -> Lots of Mayo -> Lettuce -> Bun top.'
+    ],
+    instructionsBn: [
+      'চিকেন কিমার সাথে গোলমরিচ ও নুন মিশিয়ে গোল প্যাটি গড়ুন।',
+      'ব্রেডক্রাম্ব মাখিয়ে প্যাটি ছাঁকা তেলে ভাজুন।',
+      'বনগুলো তাওয়ায় হালকা টোস্ট করুন।',
+      'সাজান: বন -> প্যাটি -> প্রচুর মেয়োনিজ -> লেটুস -> বন।'
+    ],
+    tags: ['Fast Food', 'Burger', 'Snack']
   }
 ];
 
@@ -239,6 +362,78 @@ export const TESTIMONIALS: Testimonial[] = [
     contentBn: 'আমি হিসাব করে দেখেছি। মাসির খরচ আর বাজারের খরচের চেয়ে ভুক ফুডস সস্তা। আর কোনো মাথাব্যথা নেই।',
     source: 'Google',
     rating: 5
+  },
+  {
+    id: '5',
+    name: 'Mrs. Roy',
+    role: 'Homemaker',
+    content: 'My husband has high cholesterol, and Bhuk\'s "Senior Lite" plan is a blessing. Less oil, perfect taste. The delivery boy is also very polite.',
+    contentBn: 'আমার স্বামীর হাই কোলেস্টেরল, তাই ভুকের "সিনিয়র লাইট" প্ল্যানটা আশীর্বাদের মতো। কম তেল, কিন্তু স্বাদে দারুণ। ডেলিভারি বয়ও খুব ভদ্র।',
+    source: 'Google',
+    rating: 5
+  },
+  {
+    id: '6',
+    name: 'Amit & Riya',
+    role: 'Working Couple',
+    content: 'We both work in Sector V and reach home late. Dinner delivery by Bhuk Foods saves us every night. The Sunday Mutton Thali is a must-try!',
+    contentBn: 'আমরা দুজনেই সেক্টর ফাইভ-এ চাকরি করি, ফিরতে রাত হয়। ভুকের ডিনার ডেলিভারি আমাদের রোজ বাঁচিয়ে দেয়। রবিবার মটন থালি ট্রাই করতে ভুলবেন না!',
+    source: 'Justdial',
+    rating: 5
+  },
+  {
+    id: '7',
+    name: 'Souvik G.',
+    role: 'Student (NIT)',
+    content: 'Hostel food was terrible. Bhuk Foods is cheap and actually tastes like home. ₹30/meal for students is unbeatable in Agarpara.',
+    contentBn: 'হস্টেলের খাবার জঘন্য ছিল। ভুক ফুডস সস্তা এবং একদম বাড়ির স্বাদ। আগরপাড়ায় ছাত্রছাত্রীদের জন্য ৩০ টাকায় এমন মিল পাওয়া অসম্ভব।',
+    source: 'Google',
+    rating: 4
+  },
+  {
+    id: '8',
+    name: 'Dr. Banerjee',
+    role: 'Retired Doctor',
+    content: 'Hygiene is my top priority. I visited their kitchen in Nilganj Road before subscribing. It is spotless. Very impressed with their standards.',
+    contentBn: 'পরিচ্ছন্নতা আমার কাছে সবার আগে। সাবস্ক্রিপশন নেওয়ার আগে আমি নীলগঞ্জ রোডে ওদের কিচেন দেখতে গিয়েছিলাম। একদম ঝকঝকে। আমি খুব ইম্প্রেসড।',
+    source: 'Justdial',
+    rating: 5
+  },
+  {
+    id: '9',
+    name: 'Priya S.',
+    role: 'New Mom',
+    content: 'Recovering post-pregnancy was hard without help. Bhuk Foods was a lifesaver. The food is non-spicy and healthy, exactly what I needed.',
+    contentBn: 'গর্ভাবস্থার পরে সাহায্য ছাড়া সামলানো খুব কঠিন ছিল। ভুক ফুডস আমাকে বাঁচিয়ে দিয়েছে। খাবার একদম ঝাল ছাড়া এবং স্বাস্থ্যকর।',
+    source: 'Google',
+    rating: 5
+  },
+  {
+    id: '10',
+    name: 'Vikram Singh',
+    role: 'Fitness Trainer',
+    content: 'I usually cook my own meals for macros, but Bhuk\'s chicken quality is surprisingly good. No greasy gravy, just good protein.',
+    contentBn: 'ম্যাক্রোজের জন্য আমি সাধারণত নিজেই রান্না করি, কিন্তু ভুকের চিকেনের মান অবাক করার মতো ভালো। তেলতেলে ঝোল নয়, একদম ভালো প্রোটিন।',
+    source: 'Justdial',
+    rating: 4
+  },
+  {
+    id: '11',
+    name: 'Tapan Das',
+    role: 'Shop Owner',
+    content: 'I run a shop in Sodepur Station road. My lunch arrives exactly at 1:30 PM everyday. Very reliable service for business people.',
+    contentBn: 'সোদপুর স্টেশন রোডে আমার দোকান আছে। আমার লাঞ্চ রোজ ঠিক দুপুর ১:৩০ টায় চলে আসে। ব্যবসায়ীদের জন্য খুব নির্ভরযোগ্য।',
+    source: 'Google',
+    rating: 5
+  },
+  {
+    id: '12',
+    name: 'Sneha G.',
+    role: 'Nurse',
+    content: 'My shifts are crazy. Sometimes I eat dinner at 10 PM. The food stays warm in their packaging. Really grateful.',
+    contentBn: 'আমার শিফট খুব এলোমেলো। মাঝে মাঝে রাত ১০টায় ডিনার করি। ওদের প্যাকিংয়ে খাবার গরম থাকে। আমি সত্যিই কৃতজ্ঞ।',
+    source: 'Google',
+    rating: 5
   }
 ];
 
@@ -348,11 +543,12 @@ export const PAIN_POINTS: PainPointItem[] = [
 export const TRANSLATIONS = {
   en: {
     nav_home: 'Home',
-    nav_plans: 'Plans',
+    nav_plans: 'Meals & Plans',
     nav_calc: 'Savings Calculator',
     nav_resources: 'Free Guides',
     nav_stories: 'Stories',
     nav_policies: 'Policies',
+    nav_recipes: 'Famous Recipes',
     hero_headline: 'India\'s First Kitchen Substitution Service.',
     hero_subhead: 'Delete your grocery apps. Sell your stove. We aren\'t just a tiffin service; we are your complete kitchen replacement in Agarpara, Sodepur & Belgharia.',
     hero_cta: 'Start Your Subscription',
@@ -362,7 +558,7 @@ export const TRANSLATIONS = {
     calc_desc: 'See how much you really spend on food vs. a Bhuk subscription.',
     market_title: 'Kolkata Market Watch',
     market_subtitle: 'Kitchen substitution means wholesale efficiency. We pass the savings to you.',
-    plans_title: 'Kitchen Substitution Plans',
+    plans_title: 'Meals & Membership Plans',
     trust_fssai: 'FSSAI Registered Kitchen',
     trust_hygiene: '100% Hygiene SOPs',
     trust_local: 'Local Agarpara Kitchen',
@@ -403,15 +599,22 @@ export const TRANSLATIONS = {
     col_apps: 'Delivery Apps',
     col_self: 'Self Cooking',
     col_maid: 'Maid / Cook',
-    tagline: 'Stop cooking, Enjoy Living'
+    tagline: 'Stop cooking, Enjoy Living',
+    recipes_title: 'Famous Recipes & Secrets',
+    recipes_subtitle: 'Learn how to make legendary dishes from our chefs.',
+    prep_time: 'Prep Time',
+    servings: 'Servings',
+    ingredients: 'Ingredients',
+    instructions: 'Instructions'
   },
   bn: {
     nav_home: 'হোম',
-    nav_plans: 'প্ল্যান',
+    nav_plans: 'মিল ও প্ল্যান',
     nav_calc: 'সেভিংস ক্যালকুলেটর',
     nav_resources: 'ফ্রি গাইড',
     nav_stories: 'গল্প ও ছবি',
     nav_policies: 'পলিসি',
+    nav_recipes: 'বিখ্যাত রেসিপি',
     hero_headline: 'ভারতের প্রথম কিচেন সাবস্টিটিউশন সার্ভিস।',
     hero_subhead: 'বাজার করার অ্যাপ ডিলিট করুন। রান্নার ঝামেলা ভুলে যান। আমরা শুধু টিফিন দিই না, আমরা আপনার রান্নাঘরের সম্পূর্ণ বিকল্প।',
     hero_cta: 'সাবস্ক্রিপশন শুরু করুন',
@@ -421,7 +624,7 @@ export const TRANSLATIONS = {
     calc_desc: 'আপনার বর্তমান খরচের সাথে ভুক সাবস্ক্রিপশনের তুলনা দেখুন।',
     market_title: 'কলকাতার বাজার দর',
     market_subtitle: 'কিচেন সাবস্টিটিউশন মানেই পাইকারি সাশ্রয়।',
-    plans_title: 'কিচেন সাবস্টিটিউশন প্ল্যান',
+    plans_title: 'মিল ও কিচেন সাবস্টিটিউশন প্ল্যান',
     trust_fssai: 'FSSAI রেজিস্টার্ড কিচেন',
     trust_hygiene: '১০০% হাইজিন মেনে রান্না',
     trust_local: 'আগরপাড়ার নিজস্ব কিচেন',
@@ -462,6 +665,12 @@ export const TRANSLATIONS = {
     col_apps: 'ডেলিভারি অ্যাপ',
     col_self: 'নিজের রান্না',
     col_maid: 'কাজের মাসি',
-    tagline: 'রান্না থামান, জীবন উপভোগ করুন'
+    tagline: 'রান্না থামান, জীবন উপভোগ করুন',
+    recipes_title: 'বিখ্যাত রেসিপি ও সিক্রেট',
+    recipes_subtitle: 'আমাদের শেফদের থেকে শিখুন লিজেন্ডারি সব রান্নার কায়দা।',
+    prep_time: 'সময় লাগবে',
+    servings: 'পরিবেশন',
+    ingredients: 'উপকরণ',
+    instructions: 'প্রণালী'
   }
 };

@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-ro
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Stories from './pages/Stories';
+import Recipes from './pages/Recipes';
 import Agarpara from './pages/Agarpara';
 import Sodepur from './pages/Sodepur';
 import Belgharia from './pages/Belgharia';
@@ -11,6 +12,7 @@ import Terms from './pages/Terms';
 import Refund from './pages/Refund';
 import Privacy from './pages/Privacy';
 import BhukLogo from './components/BhukLogo';
+import VisitorCounter from './components/VisitorCounter';
 import { Language } from './types';
 import { TRANSLATIONS, POLICY_URLS } from './constants';
 
@@ -38,6 +40,9 @@ const App: React.FC = () => {
     return 'light';
   });
 
+  // Mobile Menu State
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const root = window.document.documentElement;
     if (theme === 'dark') {
@@ -54,6 +59,10 @@ const App: React.FC = () => {
     const newLang = lang === 'en' ? 'bn' : 'en';
     setLang(newLang);
     localStorage.setItem('bhuk_lang', newLang);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   const t = TRANSLATIONS[lang];
@@ -80,7 +89,7 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-orange-100/50 dark:border-slate-800 shadow-sm transition-colors duration-300"></div>
           
           <div className="container mx-auto px-4 h-20 flex items-center justify-between relative z-10">
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
               <div className="transform group-hover:rotate-3 transition-transform">
                 <BhukLogo className="w-10 h-10" />
               </div>
@@ -89,9 +98,10 @@ const App: React.FC = () => {
               </div>
             </Link>
             
-            <div className="flex items-center gap-4 md:gap-6">
+            <div className="flex items-center gap-2 md:gap-6">
               <NavLink to="/">{t.nav_home}</NavLink>
               <NavLink to="/stories">{t.nav_stories}</NavLink>
+              <NavLink to="/recipes">{t.nav_recipes}</NavLink>
               <NavLink href="/#plans">{t.nav_plans}</NavLink>
               <NavLink href="/#calculator">{t.nav_calc}</NavLink>
               
@@ -136,6 +146,48 @@ const App: React.FC = () => {
               >
                 Subscribe
               </a>
+
+              {/* Hamburger Menu Button */}
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden ml-1 p-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors focus:outline-none"
+                aria-label="Toggle Menu"
+              >
+                {isMobileMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          <div className={`md:hidden absolute top-20 left-0 w-full bg-white dark:bg-slate-900 border-t border-orange-100 dark:border-slate-800 shadow-2xl transition-all duration-300 ease-in-out z-40 overflow-hidden ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-5rem)] overflow-y-auto pb-20">
+              <Link to="/" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_home}</Link>
+              <Link to="/stories" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_stories}</Link>
+              <Link to="/recipes" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_recipes}</Link>
+              <a href="/#plans" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_plans}</a>
+              <a href="/#calculator" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_calc}</a>
+              
+              <div className="my-2 border-t border-slate-100 dark:border-slate-800"></div>
+              
+              <div className="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Policies</div>
+              <Link to="/terms" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_terms}</Link>
+              <Link to="/refund" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_refund}</Link>
+              <Link to="/privacy" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_privacy}</Link>
+              <Link to="/admin" onClick={closeMobileMenu} className="block py-2 px-4 text-xs text-slate-400 hover:text-slate-600">Owner Login</Link>
+
+              <div className="pt-4 mt-2">
+                <a 
+                  href="/#plans" 
+                  onClick={closeMobileMenu}
+                  className="block w-full text-center bg-[#D32F2F] text-white py-4 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
+                >
+                  Subscribe Now
+                </a>
+              </div>
             </div>
           </div>
         </nav>
@@ -144,6 +196,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home lang={lang} />} />
             <Route path="/stories" element={<Stories lang={lang} />} />
+            <Route path="/recipes" element={<Recipes lang={lang} />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/agarpara" element={<Agarpara />} />
             <Route path="/sodepur" element={<Sodepur />} />
@@ -173,7 +226,10 @@ const App: React.FC = () => {
                </div>
              </div>
              <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs">
-                <p>{t.footer_copy} • v1.1 Live</p>
+                <div className="flex gap-4 items-center">
+                   <p>{t.footer_copy} • v1.1 Live</p>
+                   <VisitorCounter />
+                </div>
                 <div className="mt-2 md:mt-0 flex gap-4">
                   <span>Made with ❤️ in Kolkata</span>
                 </div>
