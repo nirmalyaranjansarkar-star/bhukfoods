@@ -3,17 +3,17 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nirmalyaranjansarkar-star/bhukfoods-com.git"
-  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
+    "login": "firebase login",
+    "connect": "firebase use --add",
+    "init": "firebase init hosting",
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
+    "firebase": "^10.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
@@ -27,6 +27,7 @@
     "vite": "^5.0.0",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "firebase-tools": "^13.0.0"
   }
 }
