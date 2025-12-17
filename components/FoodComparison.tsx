@@ -28,11 +28,11 @@ const FoodComparison: React.FC<FoodComparisonProps> = ({ lang }) => {
                 <th className="p-4 text-left font-bold text-slate-500 dark:text-slate-400 w-1/6 sticky left-0 bg-slate-50 dark:bg-slate-800 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]">
                   {lang === 'bn' ? 'প্যারামিটার' : 'Parameters'}
                 </th>
-                <th className="p-4 text-center font-bold text-green-700 dark:text-green-400 bg-[#FFF8E1] dark:bg-slate-950 border-x border-orange-200 dark:border-slate-800 w-1/5 scale-105 shadow-md relative z-0">
+                <th className="p-4 text-center font-bold text-[#D32F2F] bg-[#FFF8E1] dark:bg-slate-950 border-x border-orange-200 dark:border-slate-800 w-1/5 scale-105 shadow-md relative z-0">
                   <div className="flex flex-col items-center">
                     <span className="text-2xl mb-1">🥘</span>
                     {t.col_bhuk}
-                    <span className="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full mt-1">RECOMMENDED</span>
+                    <span className="text-[10px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full mt-1">RECOMMENDED</span>
                   </div>
                 </th>
                 <th className="p-4 text-center font-semibold text-slate-600 dark:text-slate-300 w-1/6">{t.col_self}</th>
@@ -47,7 +47,7 @@ const FoodComparison: React.FC<FoodComparisonProps> = ({ lang }) => {
                   <td className="p-4 font-bold text-slate-700 dark:text-slate-200 sticky left-0 bg-inherit z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] border-r border-slate-100 dark:border-slate-800">
                     {lang === 'bn' ? row.parameterBn : row.parameter}
                   </td>
-                  <td className="p-4 text-center font-bold text-green-700 dark:text-green-500 bg-[#FFF8E1] dark:bg-slate-950 border-x border-orange-200 dark:border-slate-800">
+                  <td className="p-4 text-center font-bold text-green-700 dark:text-green-400 bg-[#FFF8E1] dark:bg-slate-950 border-x border-orange-200 dark:border-slate-800">
                     {lang === 'bn' ? row.bhukBn : row.bhuk}
                   </td>
                   <td className="p-4 text-center text-slate-600 dark:text-slate-400">{lang === 'bn' ? row.selfBn : row.self}</td>

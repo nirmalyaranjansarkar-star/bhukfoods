@@ -4,9 +4,10 @@ import { BlogPost as BlogPostType, Language } from '../types';
 interface BlogPostProps {
   post: BlogPostType;
   lang: Language;
+  onReadMore: (post: BlogPostType) => void;
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ post, lang }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ post, lang, onReadMore }) => {
   
   const handleShare = (e: React.MouseEvent, platform: string) => {
     e.preventDefault();
@@ -36,7 +37,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, lang }) => {
   };
 
   return (
-    <article className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-orange-100 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group">
+    <article 
+      className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-orange-100 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group cursor-pointer"
+      onClick={() => onReadMore(post)}
+    >
       <div className="flex flex-col mb-4">
         <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
           {post.date}
@@ -58,10 +62,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, lang }) => {
       </p>
       
       <div className="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
-        <span className="text-[#D32F2F] text-sm font-bold hover:underline cursor-pointer inline-flex items-center gap-1">
+        <button 
+          onClick={(e) => { e.stopPropagation(); onReadMore(post); }}
+          className="text-[#D32F2F] text-sm font-bold hover:underline cursor-pointer inline-flex items-center gap-1 focus:outline-none"
+        >
           {lang === 'bn' ? 'আরও পড়ুন' : 'Read Article'} 
           <span className="transition-transform group-hover:translate-x-1">→</span>
-        </span>
+        </button>
 
         <div className="flex items-center gap-1">
           {/* WhatsApp */}

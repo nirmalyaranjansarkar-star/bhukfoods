@@ -1,3 +1,4 @@
+
 import { Plan, MarketItem, FAQItem, Testimonial, ResourceItem, BlogPost, GalleryItem, PainPointItem, ComparisonRow, Recipe } from './types';
 
 export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
@@ -472,6 +473,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleBn: 'পোড়া তেল কেন স্বাস্থ্যের জন্য বিষ?',
     excerpt: 'Most cheap hotels reuse oil for 7 days. Learn how we maintain 100% oil purity at Bhuk Foods.',
     excerptBn: 'বেশিরভাগ সস্তা হোটেল ৭ দিন ধরে একই তেল ব্যবহার করে। জানুন আমরা কীভাবে তেলের বিশুদ্ধতা বজায় রাখি।',
+    content: 'It is a common practice in roadside eateries and cheap hotels to reuse frying oil. When oil is heated repeatedly, it undergoes chemical changes, producing free radicals and trans fats that are harmful to the heart and can lead to long-term health issues like acidity, high cholesterol, and even cancer.\n\nAt Bhuk Foods, we follow a strict policy: we never reuse oil for deep frying. The oil used for frying fish or chicken is discarded immediately after one use. For our daily curries, we use fresh Kachi Ghani Mustard Oil or Sunflower Oil. This ensures that the food tastes fresh, is light on the stomach, and provides the nutrition you expect from a home-cooked meal.',
+    contentBn: 'রাস্তার ধারের সস্তা হোটেলগুলোতে একই তেল বারবার ব্যবহার করা খুব সাধারণ ব্যাপার। তেল বারবার গরম করলে তাতে রাসায়নিক পরিবর্তন ঘটে এবং ফ্রি র‍্যাডিকাল ও ট্রান্স ফ্যাট তৈরি হয় যা হার্টের জন্য ক্ষতিকর। এর ফলে অম্বল, হাই কোলেস্টেরল এবং দীর্ঘমেয়াদে ক্যান্সারের ঝুঁকি বাড়ে।\n\nভুক ফুডস-এ আমরা কড়া নিয়ম মেনে চলি: আমরা ভাজার জন্য ব্যবহার করা তেল কখনোই দ্বিতীয়বার ব্যবহার করি না। মাছ বা মাংস ভাজার তেল একবার ব্যবহারের পরেই ফেলে দেওয়া হয়। আমাদের রোজকার রান্নার জন্য আমরা টাটকা কাচ্চি ঘানি সর্ষের তেল বা সানফ্লাওয়ার অয়েল ব্যবহার করি। এর ফলে খাবার থাকে তাজা, সহজপাচ্য এবং পুষ্টিকর - ঠিক যেমনটা আপনি বাড়িতে আশা করেন।',
     date: 'Oct 12, 2024',
     image: 'https://images.unsplash.com/photo-1615485925763-867862f80a3a?q=80&w=1000', 
     readTime: '3 min'
@@ -482,6 +485,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleBn: 'আগরপাড়ার স্পেশাল মশলার গোপন রহস্য',
     excerpt: 'We don\'t buy packets. We buy raw spices from Burrabazar and grind them. Here is why it matters.',
     excerptBn: 'আমরা প্যাকেট মশলা কিনি না। আমরা বড়বাজার থেকে কাঁচা মশলা কিনে ভাঙাই। কেন এটা জরুরি?',
+    content: 'Have you ever wondered why homemade food tastes different from packet masalas? Most commercial spice powders contain fillers, artificial colors, and sometimes even sawdust to increase weight. This not only ruins the taste but is also hazardous to health.\n\nWe take a different approach. Every week, our team visits the wholesale spice market in Burrabazar to handpick whole spices like cumin, coriander, cardamom, and cinnamon. These are then sun-dried and ground in our own kitchen in Agarpara. This process retains the essential oils and aroma of the spices, giving our dishes that distinct, authentic Bengali flavor that our customers love.',
+    contentBn: 'কখনও ভেবেছেন কেন বাড়ির খাবারের স্বাদ কেনা মশলার চেয়ে আলাদা হয়? বেশিরভাগ বাণিজ্যিক গুঁড়ো মশলায় ফিলার, কৃত্রিম রং এবং কখনও কখনও ওজনের জন্য কাঠের গুঁড়ো মেশানো থাকে। এতে শুধু স্বাদই নষ্ট হয় না, স্বাস্থ্যেরও ক্ষতি হয়।\n\nআমরা সম্পূর্ণ অন্য পথে হাঁটি। প্রতি সপ্তাহে আমাদের টিম বড়বাজারের পাইকারি মশলা বাজারে গিয়ে জিরে, ধনে, এলাচ এবং দারুচিনির মতো গোটা মশলা বেছে আনে। এগুলো রোদে শুকিয়ে আগরপাড়ায় আমাদের নিজস্ব কিচেনে ভাঙানো হয়। এই পদ্ধতিতে মশলার এসেনশিয়াল অয়েল এবং সুগন্ধ বজায় থাকে, যা আমাদের রান্নায় সেই খাঁটি বাঙালি স্বাদ এনে দেয় যা আমাদের গ্রাহকরা এত পছন্দ করেন।',
     date: 'Sep 28, 2024',
     image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000',
     readTime: '2 min'
@@ -492,6 +497,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleBn: 'স্বাস্থ্যকর টিফিন প্যাক করার ৫টি টিপস',
     excerpt: 'Even if you don\'t subscribe to us, follow these rules to keep your lunch fresh till 2 PM.',
     excerptBn: 'আমাদের সাবস্ক্রিপশন না নিলেও, দুপুর ২টো পর্যন্ত খাবার তাজা রাখতে এই নিয়মগুলো মেনে চলুন।',
+    content: 'Packing lunch for office or college requires care to ensure the food stays fresh and safe to eat after 4-5 hours. Here are 5 tips from our kitchen experts:\n\n1. **Cool Before Packing:** Never pack steaming hot food immediately. Let it cool down to room temperature to prevent condensation, which can make rotis soggy and spoil vegetables.\n2. **Use Stainless Steel:** Plastic containers, even if labeled "microwave safe", can leach chemicals into hot food. Switch to stainless steel or glass containers.\n3. **Separate Wet and Dry:** Keep curries and dry items in separate compartments to avoid mixing flavors and textures.\n4. **Add a Napkin:** Place a small cloth napkin or tissue over rotis to absorb excess moisture.\n5. **Hygiene is Key:** Ensure your tiffin box is washed with hot water daily to prevent bacterial growth.',
+    contentBn: 'অফিস বা কলেজের জন্য লাঞ্চ প্যাক করার সময় সতর্ক থাকা দরকার যাতে ৪-৫ ঘণ্টা পরেও খাবার টাটকা এবং নিরাপদ থাকে। আমাদের কিচেন এক্সপার্টদের ৫টি টিপস:\n\n১. **ঠান্ডা করে প্যাক করুন:** ধোঁয়া ওঠা গরম খাবার সাথে সাথে প্যাক করবেন না। ঘরের তাপমাত্রায় আসা পর্যন্ত অপেক্ষা করুন, নাহলে বাষ্প জমে রুটি ভিজে যাবে এবং সবজি নষ্ট হতে পারে।\n২. **স্টেইনলেস স্টিল ব্যবহার করুন:** প্লাস্টিকের টিফিন বক্স, এমনকি "মাইক্রোওয়েভ সেফ" হলেও, গরম খাবারের সাথে রাসায়নিক বিক্রিয়া করতে পারে। স্টিল বা কাঁচের পাত্র ব্যবহার করুন।\n৩. **শুকনো ও ঝোল আলাদা রাখুন:** তরকারি এবং শুকনো খাবার আলাদা বক্সে রাখুন যাতে স্বাদ ও টেক্সচার নষ্ট না হয়।\n৪. **ন্যাপকিন ব্যবহার করুন:** রুটির ওপর একটা ছোট কাপড়ের ন্যাপকিন বা টিস্যু রাখুন যাতে অতিরিক্ত আর্দ্রতা শুষে নিতে পারে।\n৫. **পরিচ্ছন্নতা জরুরি:** ব্যাকটেরিয়ার বৃদ্ধি রুখতে রোজ গরম জল দিয়ে টিফিন বক্স ধুয়ে নিন।',
     date: 'Sep 15, 2024',
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070',
     readTime: '4 min'

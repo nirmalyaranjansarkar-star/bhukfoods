@@ -1,3 +1,4 @@
+
 export type Language = 'en' | 'bn';
 
 export interface Plan {
@@ -57,6 +58,8 @@ export interface BlogPost {
   titleBn: string;
   excerpt: string;
   excerptBn: string;
+  content: string;
+  contentBn: string;
   date: string;
   image: string;
   readTime: string;
