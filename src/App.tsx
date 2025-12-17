@@ -106,7 +106,7 @@ const App: React.FC = () => {
               <NavLink to="/recipes">{t.nav_recipes}</NavLink>
               <NavLink href="/#plans">{t.nav_plans}</NavLink>
               <NavLink href="/#calculator">{t.nav_calc}</NavLink>
-              <NavLink to="/jobs">Careers</NavLink>
+              <NavLink to="/jobs">Jobs</NavLink>
               
               <div className="relative group hidden md:block">
                 <button className="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#D32F2F] dark:hover:text-[#D32F2F] transition-colors flex items-center gap-1 py-2">

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
@@ -18,11 +19,11 @@ const firebaseConfig = {
   measurementId: "REPLACE_WITH_MEASUREMENT_ID"
 };
 
-// Initialize Firebase
+// Initialize Firebase (Modular)
 const app = initializeApp(firebaseConfig);
 
 // Export services for use in components
-export const storage = getStorage(app); // For your .webp photos
-export const db = getFirestore(app);    // For data/text
+export const storage = getStorage(app); 
+export const db = getFirestore(app);
 
 export default app;

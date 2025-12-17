@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
-import { PLANS, MARKET_DATA, NO_MEAL_FORM_URL } from '../constants';
+import { PLANS, NO_MEAL_FORM_URL, JOB_APPLICATION_FORM_URL } from '../constants';
 
 // Construct System Instruction dynamically to keep it up-to-date with constants
 const getSystemInstruction = () => {
@@ -23,8 +23,13 @@ Policies:
 - Refund/Pause: Users can pause meals by filling the "No Meal Day" form 24 hours in advance to get a refund/credit.
 - No Meal Form Link: ${NO_MEAL_FORM_URL}
 
+Careers / Hiring:
+- We are hiring Cooks, Kitchen Helpers, and Delivery Partners in Agarpara.
+- Benefits: On-time salary, Free duty meals, Respectful culture.
+- Apply Link: ${JOB_APPLICATION_FORM_URL}
+
 Your Goal:
-Help users choose a plan, explain why we are better than maids (no holidays, reliable), or explain our hygiene.
+Help users choose a plan, explain why we are better than maids (no holidays, reliable), explain our hygiene, or guide job seekers to apply.
 Keep answers concise (under 100 words).
 `;
 };
@@ -72,10 +77,13 @@ const Chatbot: React.FC = () => {
           systemInstruction: getSystemInstruction(),
           temperature: 0.7,
         },
-        history: messages.map(m => ({
-          role: m.role,
-          parts: [{ text: m.text }]
-        }))
+        // Filter out 'welcome' message from API history as it's UI-only
+        history: messages
+          .filter(m => m.id !== 'welcome')
+          .map(m => ({
+            role: m.role,
+            parts: [{ text: m.text }]
+          }))
       });
 
       // Stream the response
