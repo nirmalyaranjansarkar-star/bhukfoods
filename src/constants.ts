@@ -252,6 +252,81 @@ export const RECIPES: Recipe[] = [
       'সাজান: বন -> প্যাটি -> প্রচুর মেয়োনিজ -> লেটুস -> বন।'
     ],
     tags: ['Fast Food', 'Burger', 'Snack']
+  },
+  {
+    id: 'paneer-butter-masala',
+    title: 'Restaurant Style Paneer Butter Masala',
+    titleBn: 'রেস্তোরাঁ স্টাইল পনির বাটার মশলা',
+    description: 'Rich, creamy, and slightly sweet tomato gravy with soft paneer cubes. A vegetarian favorite.',
+    descriptionBn: 'ধনী, ক্রিমি এবং হালকা মিষ্টি টমেটো গ্রেভিতে নরম পনিরের টুকরো। নিরামিষাশীদের প্রিয়।',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1000',
+    prepTime: '45 mins',
+    servings: '3',
+    ingredients: ['500g Paneer', 'Fresh Cream', 'Butter', 'Cashew Paste', 'Tomatoes', 'Kasuri Methi'],
+    ingredientsBn: ['৫০০ গ্রাম পনির', 'ফ্রেশ ক্রিম', 'মাখন', 'কাজু বাটা', 'টমেটো', 'কাসুরি মেথি'],
+    instructions: [
+      'Fry paneer cubes lightly in butter (optional) and soak in warm water.',
+      'Sauté onions, tomatoes, cashews, and spices. Blend into a smooth paste.',
+      'Cook the paste in butter. Add cream and sugar for richness.',
+      'Add paneer cubes and simmer. Finish with crushed Kasuri Methi.'
+    ],
+    instructionsBn: [
+      'পনিরের টুকরোগুলি মাখনে হালকা ভেজে গরম জলে ভিজিয়ে রাখুন।',
+      'পেঁয়াজ, টমেটো, কাজু এবং মশলা কষিয়ে নিন। ব্লেন্ড করে মিহি পেস্ট তৈরি করুন।',
+      'পেস্টটি মাখনে রান্না করুন। ক্রিম এবং চিনি দিন।',
+      'পনির দিন এবং ফোটান। কাসুরি মেথি ছড়িয়ে নামিয়ে নিন।'
+    ],
+    tags: ['North Indian', 'Veg', 'Creamy']
+  },
+  {
+    id: 'kolkata-fish-fry',
+    title: 'Kolkata Bhetki Fish Fry',
+    titleBn: 'কলকাতা ভেটকি ফিশ ফ্রাই',
+    description: 'The iconic diamond-shaped breaded fish fillet found in every Kolkata wedding and cabin.',
+    descriptionBn: 'কলকাতার প্রতিটি বিয়েবাড়ি এবং কেবিনে পাওয়া আইকনিক ডায়মন্ড আকৃতির বিস্কুটের গুঁড়ো মাখানো মাছ।',
+    image: 'https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=1000',
+    prepTime: '1 hr',
+    servings: '4',
+    ingredients: ['Bhetki Fillets (4 pcs)', 'Onion-Garlic-Green Chili Paste', 'Lemon Juice', 'Breadcrumbs', 'Eggs', 'Mustard Sauce (Kasundi)'],
+    ingredientsBn: ['ভেটকি ফিলে (৪ পিস)', 'পেঁয়াজ-রসুন-কাঁচা লঙ্কা বাটা', 'লেবুর রস', 'ব্রেডক্রাম্বস', 'ডিম', 'কাসুন্দি'],
+    instructions: [
+      'Marinate fish fillets with lemon juice, salt, and onion-garlic-chili paste for 2 hours.',
+      'Dip marinated fillets in beaten eggs.',
+      'Coat generously with breadcrumbs and shape into diamonds with a knife.',
+      'Deep fry until golden brown. Serve with Kasundi and Salad.'
+    ],
+    instructionsBn: [
+      'মাছের ফিলে লেবুর রস, নুন এবং পেঁয়াজ-রসুন-লঙ্কা বাটা দিয়ে ২ ঘণ্টা ম্যারিনেট করুন।',
+      'ম্যারিনেট করা ফিলে ফেটানো ডিমে ডোবান।',
+      'ব্রেডক্রাম্ব মাখিয়ে ছুরির সাহায্যে ডায়মন্ড আকার দিন।',
+      'সোনালী করে ভাজুন। কাসুন্দি ও স্যালাডের সাথে পরিবেশন করুন।'
+    ],
+    tags: ['Kolkata Special', 'Snack', 'Fish']
+  },
+  {
+    id: 'schezwan-fried-rice',
+    title: 'Schezwan Mixed Fried Rice',
+    titleBn: 'শেজওয়ান মিক্সড ফ্রায়েড রাইস',
+    description: 'Spicy Indo-Chinese street style fried rice loaded with chicken, egg, and prawns.',
+    descriptionBn: 'চিকেন, ডিম এবং চিংড়ি দিয়ে তৈরি ঝাল ইন্দো-চাইনিজ স্ট্রিট স্টাইল ফ্রায়েড রাইস।',
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb74b?q=80&w=1000',
+    prepTime: '30 mins',
+    servings: '2',
+    ingredients: ['Basmati Rice (Pre-cooked)', 'Chicken, Prawns, Egg', 'Schezwan Sauce', 'Carrots, Beans, Capsicum', 'Spring Onions', 'Soy Sauce'],
+    ingredientsBn: ['বাসমতি চাল (সেদ্ধ করা)', 'চিকেন, চিংড়ি, ডিম', 'শেজওয়ান সস', 'গাজর, বিনস, ক্যাপসিকাম', 'পেঁয়াজ পাতা', 'সয়া সস'],
+    instructions: [
+      'Stir fry the meats (chicken/prawns) and scramble the eggs. Set aside.',
+      'Sauté vegetables on high flame to keep them crunchy.',
+      'Add cold rice, schezwan sauce, soy sauce, and the fried meats.',
+      'Toss everything together on high heat. Garnish with spring onions.'
+    ],
+    instructionsBn: [
+      'মাংস (চিকেন/চিংড়ি) ভেজে নিন এবং ডিমের ঝুরি করে নিন। আলাদা রাখুন।',
+      'সবজিগুলো উচ্চ তাপে ভাজুন যাতে ক্রাঞ্চি থাকে।',
+      'ঠান্ডা ভাত, শেজওয়ান সস, সয়া সস এবং ভাজা মাংস ও ডিম দিন।',
+      'উচ্চ তাপে সব একসাথে টস করুন। পেঁয়াজ পাতা দিয়ে সাজান।'
+    ],
+    tags: ['Indo-Chinese', 'Spicy', 'Street Food']
   }
 ];
 
