@@ -1,4 +1,3 @@
-
 import { Plan, MarketItem, FAQItem, Testimonial, ResourceItem, BlogPost, GalleryItem, PainPointItem, ComparisonRow, Recipe } from './types';
 
 export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
@@ -6,6 +5,7 @@ export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
 export const SUBSCRIPTION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd9DcmzwhkLPB989NtGE1SouGTwESEfHpl4kGrZbae8TquuYg/viewform';
 export const FREE_RESOURCES_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeOe-Qf2aUaeW7Rc0MB1e3m1qPpiUTYwQiprmuOzFGyCkS0og/viewform';
 export const NO_MEAL_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdqcl4jNWsBMzj6VF5rVJ2eks2CW86V5RuePucAYS6nUpc6nA/viewform?usp=header';
+export const JOB_APPLICATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeQSfAqBOYOXneS-VT4So-CHWZqgAjx_0GzjH7DQmj-U1ajJA/viewform?usp=publish-editor';
 
 export const POLICY_URLS = {
   terms: '/terms',
@@ -502,6 +502,42 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Sep 15, 2024',
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070',
     readTime: '4 min'
+  },
+  {
+    id: '4',
+    title: 'Millet Revolution in Your Tiffin Box',
+    titleBn: 'আপনার টিফিন বক্সে মিলেট বিপ্লব',
+    excerpt: 'We are introducing Bajra and Jowar rotis in 2025. Here is why you should switch.',
+    excerptBn: '২০২৫-এ আমরা বাজরা ও জোয়ারের রুটি চালু করছি। কেন আপনার এটি খাওয়া উচিত?',
+    content: '2025 marks a healthy start at Bhuk Foods! We have listened to our diabetic and fitness-conscious customers. Starting this January, you can opt for Multi-grain or Millet Rotis (Bajra/Jowar) instead of plain wheat rotis in the "Senior Lite" and "Office Ready" plans.\n\nMillets are ancient superfoods packed with fiber and low glycemic index, making them perfect for weight management and blood sugar control. While they might feel a bit coarser than maida-mixed rotis found in hotels, the health benefits are undeniable.',
+    contentBn: '২০২৫ সাল ভুক ফুডস-এ শুরু হচ্ছে সুস্বাস্থ্যের বার্তা নিয়ে! আমাদের ডায়াবেটিক এবং স্বাস্থ্যসচেতন গ্রাহকদের কথা মাথায় রেখে, এই জানুয়ারি থেকে আপনি "সিনিয়র লাইট" এবং "অফিস রেডি" প্ল্যানে সাধারণ আটার রুটির বদলে মাল্টি-গ্রেন বা মিলেট রুটি (বাজরা/জোয়ার) বেছে নিতে পারবেন।\n\nমিলেট হল প্রচুর ফাইবার যুক্ত সুপারফুড যা ওজন এবং ব্লাড সুগার নিয়ন্ত্রণে রাখতে সাহায্য করে। হোটেলের ময়দা মেশানো রুটির চেয়ে এগুলো একটু খসখসে হতে পারে, কিন্তু এর স্বাস্থ্যগুণ অনেক বেশি।',
+    date: 'Jan 10, 2025',
+    image: 'https://images.unsplash.com/photo-1640183168285-b9e737c037bf?q=80&w=1000',
+    readTime: '3 min'
+  },
+  {
+    id: '5',
+    title: 'Monsoon Alert: Avoid Leafy Greens on Street',
+    titleBn: 'বর্ষায় সাবধান: বাইরের শাক-পাতা এড়িয়ে চলুন',
+    excerpt: 'Why we stop serving Spinach (Palong) during rains and what we serve instead.',
+    excerptBn: 'বর্ষাকালে আমরা কেন পালং শাক দিই না এবং তার বদলে কী দিই?',
+    content: 'The arrival of Monsoon brings joy but also digestive troubles. One of the biggest culprits is leafy green vegetables (Shaak). During rains, the moisture makes them a breeding ground for bacteria and worms which are hard to remove even with washing.\n\nThat is why, from June to August, Bhuk Foods removes Leafy Greens from the menu. Instead, we focus on water-rich gourds like Bottle Gourd (Lau), Ash Gourd (Chalkumro), and Ridge Gourd (Jhinge). These are safer, easier to digest, and keep the body cool in the humidity.',
+    contentBn: 'বর্ষাকাল আনন্দ নিয়ে এলেও পেটের সমস্যাও নিয়ে আসে। এর অন্যতম প্রধান কারণ হল শাক-পাতা। বৃষ্টির সময় শাকে পোকা ও ব্যাকটেরিয়া বাসা বাঁধে যা সাধারণ ধোয়ায় দূর করা কঠিন।\n\nতাই জুন থেকে আগস্ট পর্যন্ত ভুক ফুডস-এর মেনু থেকে শাক বাদ দেওয়া হয়। এর বদলে আমরা লাউ, চালকুমড়ো এবং ঝিঙের মতো সবজিতে জোর দিই। এগুলো নিরাপদ, হজমে সহায়ক এবং আর্দ্র আবহাওয়ায় শরীর ঠান্ডা রাখে।',
+    date: 'Jun 15, 2025',
+    image: 'https://images.unsplash.com/photo-1560155016-02482329302c?q=80&w=1000',
+    readTime: '4 min'
+  },
+  {
+    id: '6',
+    title: 'Winter Special: Nolen Gur is Back!',
+    titleBn: 'শীতের স্পেশাল: নলেন গুড় ফিরে এসেছে!',
+    excerpt: 'Our Sunday special dessert just got an upgrade. Experience the magic of date palm jaggery.',
+    excerptBn: 'রবিবারের স্পেশাল ডেজার্টে এখন নলেন গুড়ের ছোঁয়া। খেজুর গুড়ের জাদুকরী স্বাদ।',
+    content: 'Winter in Kolkata is meaningless without the aroma of Nolen Gur (Date Palm Jaggery). To celebrate the chill in the air, Bhuk Foods is upgrading the Sunday Special dessert.\n\nThroughout December and January, all our subscribers will receive "Nolen Gurer Payesh" or "Rosogolla" on Sundays. We source our Gur directly from farmers in Jaynagar to ensure authenticity. No sugar syrup, just pure liquid gold.',
+    contentBn: 'নলেন গুড়ের গন্ধ ছাড়া কলকাতায় শীতকাল অসম্পূর্ণ। এই শীত উদযাপন করতে ভুক ফুডস রবিবারের স্পেশাল ডেজার্টে আনছে বদল।\n\nপুরো ডিসেম্বর ও জানুয়ারি মাস জুড়ে, আমাদের সব সাবস্ক্রাইবাররা রবিবারে পাবেন "নলেন গুড়ের পায়েস" অথবা "রসগোল্লা"। খাঁটি স্বাদ নিশ্চিত করতে আমরা জয়নগর থেকে সরাসরি গুড় সংগ্রহ করি। চিনির রস নয়, একদম খাঁটি নলেন গুড়।',
+    date: 'Dec 20, 2025',
+    image: 'https://images.unsplash.com/photo-1606525437679-037caa74a692?q=80&w=1000',
+    readTime: '2 min'
   }
 ];
 
