@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import * as ReactRouterDOM from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Stories from './pages/Stories';
@@ -8,15 +8,15 @@ import Agarpara from './pages/Agarpara';
 import Sodepur from './pages/Sodepur';
 import Belgharia from './pages/Belgharia';
 import Kolkata from './pages/Kolkata';
+import JobOpportunity from './pages/JobOpportunity';
 import Terms from './pages/Terms';
 import Refund from './pages/Refund';
 import Privacy from './pages/Privacy';
 import BhukLogo from './components/BhukLogo';
 import VisitorCounter from './components/VisitorCounter';
+import Chatbot from './components/Chatbot';
 import { Language } from './types';
 import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL, JOB_APPLICATION_FORM_URL } from './constants';
-
-const { HashRouter: Router, Routes, Route, Link, useLocation } = ReactRouterDOM;
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -106,6 +106,7 @@ const App: React.FC = () => {
               <NavLink to="/recipes">{t.nav_recipes}</NavLink>
               <NavLink href="/#plans">{t.nav_plans}</NavLink>
               <NavLink href="/#calculator">{t.nav_calc}</NavLink>
+              <NavLink to="/jobs">Careers</NavLink>
               
               <div className="relative group hidden md:block">
                 <button className="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#D32F2F] dark:hover:text-[#D32F2F] transition-colors flex items-center gap-1 py-2">
@@ -177,7 +178,7 @@ const App: React.FC = () => {
               
               <div className="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Quick Links</div>
               <a href={NO_MEAL_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu} className="block py-2 px-4 text-green-600 dark:text-green-400 font-bold hover:text-green-700">No Meal Day Claim Form</a>
-              <a href={JOB_APPLICATION_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">Kitchen Job Application</a>
+              <Link to="/jobs" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">Job Opportunities</Link>
               <Link to="/terms" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_terms}</Link>
               <Link to="/refund" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_refund}</Link>
               <Link to="/privacy" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_privacy}</Link>
@@ -206,11 +207,15 @@ const App: React.FC = () => {
             <Route path="/sodepur" element={<Sodepur />} />
             <Route path="/belgharia" element={<Belgharia />} />
             <Route path="/kolkata" element={<Kolkata />} />
+            <Route path="/jobs" element={<JobOpportunity />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<Refund />} />
             <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
+        
+        {/* Chatbot integrated */}
+        <Chatbot />
 
         <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
            <div className="container mx-auto px-4">
@@ -232,7 +237,7 @@ const App: React.FC = () => {
                  <h4 className="text-white font-bold mb-4">Quick Links</h4>
                  <ul className="space-y-2 text-sm">
                    <li><a href={NO_MEAL_FORM_URL} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 font-semibold flex items-center gap-1">No Meal Day Claim ↗</a></li>
-                   <li><a href={JOB_APPLICATION_FORM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#D32F2F] flex items-center gap-1">Kitchen Job Application ↗</a></li>
+                   <li><Link to="/jobs" className="hover:text-[#D32F2F] flex items-center gap-1">Job Opportunities</Link></li>
                    <li><Link to="/terms" className="hover:text-[#D32F2F]">Terms & Conditions</Link></li>
                    <li><Link to="/refund" className="hover:text-[#D32F2F]">Refund Policy</Link></li>
                  </ul>

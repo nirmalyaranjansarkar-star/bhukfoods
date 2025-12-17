@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'; // Keeping old import commented or replaced implicitly by logic below, but actually I am replacing it fully.
-import * as ReactRouterDOM from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Stories from './pages/Stories';
@@ -16,15 +15,6 @@ import BhukLogo from './components/BhukLogo';
 import VisitorCounter from './components/VisitorCounter';
 import { Language } from './types';
 import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL } from './constants';
-
-// Destructure from namespace to fix TS import error
-const { HashRouter: RouterComponent, Routes: RoutesComponent, Route: RouteComponent, Link: LinkComponent, useLocation: useLocationHook } = ReactRouterDOM;
-// Re-assign to original names for compatibility with existing code
-const Router = RouterComponent;
-const Routes = RoutesComponent;
-const Route = RouteComponent;
-const Link = LinkComponent;
-const useLocation = useLocationHook;
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();

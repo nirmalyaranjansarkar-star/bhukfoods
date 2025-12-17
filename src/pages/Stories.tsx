@@ -101,13 +101,13 @@ const Stories: React.FC<StoriesProps> = ({ lang }) => {
 
       {/* Blog Reading Modal */}
       {selectedPost && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div 
             className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity"
             onClick={closeModal}
           ></div>
           
-          <div className="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] rounded-2xl shadow-2xl overflow-y-auto relative z-10 animate-on-scroll is-visible border border-slate-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] rounded-2xl shadow-2xl overflow-y-auto relative z-10 border border-slate-200 dark:border-slate-800 animate-on-scroll is-visible">
             {/* Close Button */}
             <button 
               onClick={closeModal}
