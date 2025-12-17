@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import * as ReactRouterDOM from 'react-router-dom';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Stories from './pages/Stories';
@@ -13,8 +13,11 @@ import Refund from './pages/Refund';
 import Privacy from './pages/Privacy';
 import BhukLogo from './components/BhukLogo';
 import VisitorCounter from './components/VisitorCounter';
+import Chatbot from './components/Chatbot';
 import { Language } from './types';
 import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL } from './constants';
+
+const { HashRouter: Router, Routes, Route, Link, useLocation } = ReactRouterDOM;
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -208,6 +211,9 @@ const App: React.FC = () => {
             <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
+        
+        {/* Chatbot Overlay */}
+        <Chatbot />
 
         <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
            <div className="container mx-auto px-4">

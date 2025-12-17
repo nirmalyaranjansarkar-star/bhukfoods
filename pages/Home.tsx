@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import * as ReactRouterDOM from 'react-router-dom';
 import { Language } from '../types';
 import { TRANSLATIONS, NO_MEAL_FORM_URL } from '../constants';
 import Calculator from '../components/Calculator';
@@ -12,6 +12,8 @@ import LeadGen from '../components/LeadGen';
 import PainPoints from '../components/PainPoints';
 import FoodComparison from '../components/FoodComparison';
 import { trackEvent, GTM_EVENTS } from '../services/analytics';
+
+const { Link } = ReactRouterDOM;
 
 interface HomeProps {
   lang: Language;
