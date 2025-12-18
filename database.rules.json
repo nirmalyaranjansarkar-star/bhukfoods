@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "photos": {
+      ".read": "true",
+      ".write": "request.auth != null"
+    },
+    "visitors": {
+      ".read": "true",
+      ".write": "true"
+    },
+    ".read": "true",
+    ".write": "request.auth != null"
+  }
+}

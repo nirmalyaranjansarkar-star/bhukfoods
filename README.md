@@ -1,39 +1,43 @@
-# Bhuk Foods - Operations Manual
+# Bhuk Foods - High-Performance Food Subscription Web App
 
-## 🚀 Deployment Instructions
+This project is a complete, production-ready web application for a local food subscription service, built with React, TypeScript, and Firebase. It's designed for high performance, ease of use, and simple deployment.
 
-### Automated Deployment (via GitHub)
-This project is configured with a CI/CD workflow to automatically deploy to Firebase Hosting.
+## 🚀 Deployment Instructions (Live Hosting)
 
-1.  **On Pull Request**: A temporary preview URL will be generated and posted as a comment on the PR.
-2.  **On Push to `main`**: The changes will be automatically built and deployed to your live hosting URL.
+This project is configured for one-command deployment to Firebase Hosting.
 
-**Setup Required:**
-To enable this workflow, you must add a secret to your GitHub repository:
-1.  Go to your Firebase Project Settings > Service Accounts.
-2.  Generate a new private key (JSON file).
-3.  In your GitHub repo, go to **Settings > Secrets and variables > Actions**.
-4.  Create a **New repository secret** with the name `FIREBASE_SERVICE_ACCOUNT_BHUK_FOODS_E54D4`.
-5.  Paste the entire content of the downloaded JSON file as the secret's value.
+### Manual Deployment (Recommended First Step)
+To deploy the entire application (Website + Database Rules + Storage Rules) from your local machine:
 
-### Manual Deployment
-If you need to deploy manually from your local machine:
-
-1.  **Open the Terminal** in your workspace.
-2.  Run the deploy command:
+1.  **Install Firebase Tools**: If you haven't already, run `npm install -g firebase-tools` in your terminal.
+2.  **Login to Firebase**: Run `firebase login`.
+3.  **Connect Project**: Run `firebase use --add` and select the Firebase project you created.
+4.  **Fill Config Keys**: Open `firebaseConfig.ts` and replace the placeholder values with your actual Firebase project configuration keys. You can find these in your Firebase Project Settings.
+5.  **Deploy**: Run the deploy command from your terminal:
     ```bash
     npm run deploy
     ```
-3.  Wait for the build to finish. Firebase will output your **Hosting URL** (e.g., `https://bhuk-foods-e54d4.web.app`).
+6.  Wait for the process to complete. Firebase will output your live **Hosting URL** (e.g., `https://your-project-name.web.app`). Your site, database rules, and storage rules are now live.
+
+---
 
 ### 💻 Local Development
-To preview changes before publishing:
-```bash
-npm install
-npm run dev
-```
+To run the app on your local machine and preview changes before publishing:
+1.  **Install Dependencies**: `npm install`
+2.  **Run Development Server**: `npm run dev`
 
-### ⚙️ Admin & Database
-- The Admin Dashboard is located at `/admin`.
-- Ensure you have enabled **Authentication**, **Firestore**, and **Storage** in your Firebase Console.
-- Update `firebaseConfig.ts` with your project keys if you haven't already.
+This will start a local server, typically at `http://localhost:5173`.
+
+### ⚙️ Firebase Backend Configuration
+This project includes pre-configured files for your Firebase backend:
+-   `firebase.json`: The master config file for deployment.
+-   `database.rules.json`: Security rules for your Firestore database. It allows public reads but restricts writes to authenticated users (like you in the admin panel).
+-   `storage.rules`: Security rules for your file storage. Allows public viewing of gallery images but restricts uploads.
+-   `firestore.indexes.json`: Configuration for optimizing database queries.
+
+When you run `npm run deploy`, these rules are automatically applied to your Firebase project, making it secure and ready for production.
+
+### 📸 Admin Dashboard
+-   The Admin Dashboard is located at `/admin`.
+-   From here, you can upload photos to your gallery. The app automatically converts them to high-performance WebP format, uploads them to Firebase Storage, and saves the link in your Firestore database.
+-   You can also access your Google Sheets for new orders and leads directly from the dashboard.

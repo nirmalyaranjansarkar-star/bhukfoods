@@ -45,7 +45,7 @@ export const PLANS: Plan[] = [
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'ভাত/রুটি', 'সবজি', 'ডাল', 'ডিম (সপ্তাহে ২ দিন)'],
     bestFor: 'Students',
     bestForBn: 'ছাত্রছাত্রীদের জন্য',
-    image: 'https://images.unsplash.com/photo-1606491056845-8c91e7b9b9b0?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1604152163212-299066f175d0?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 'professional',
@@ -71,7 +71,7 @@ export const PLANS: Plan[] = [
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'নরম ভাত/রুটি', 'মাছ/মাংস (হালকা ঝোল)', 'কম তেল-মসলা', 'সহজপাচ্য সবজি'],
     bestFor: 'Seniors',
     bestForBn: 'বয়স্কদের জন্য',
-    image: 'https://images.unsplash.com/photo-1625603632941-88d119e34e40?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1585937421612-70a058417288?q=80&w=1000&auto=format&fit=crop'
   }
 ];
 
