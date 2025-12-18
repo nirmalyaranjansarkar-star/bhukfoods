@@ -17,8 +17,8 @@ const LeadGen: React.FC<LeadGenProps> = ({ lang }) => {
 
   return (
     <div className="bg-slate-900 text-white rounded-3xl overflow-hidden shadow-2xl my-16 relative border border-slate-700 group">
-      <div className="grid md:grid-cols-2 gap-8 items-center p-8 md:p-12 relative z-10">
-        <div className="space-y-6 order-2 md:order-1">
+      <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
+        <div className="space-y-6 order-2 md:order-1 p-8 md:p-12">
           <div className="inline-block bg-[#D32F2F] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 shadow-lg shadow-red-900/50">
             {isBn ? 'সীমিত সময়ের অফার' : 'Limited Time Offer'}
           </div>
@@ -39,6 +39,13 @@ const LeadGen: React.FC<LeadGenProps> = ({ lang }) => {
           >
             {isBn ? 'ফ্রি গাইড ডাউনলোড করুন' : 'Get My Free Guide'}
           </button>
+        </div>
+        <div className="order-1 md:order-2 h-64 md:h-full">
+            <img 
+              src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800"
+              alt="A collection of Bhuk Foods guides and recipe books including Bachelor's Survival Guide, Brain Fuel, and The Rice Myth"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
         </div>
       </div>
     </div>

@@ -78,8 +78,8 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           <div className="order-1 md:order-2 relative animate-on-scroll delay-200">
              <div className="relative z-10 transform md:rotate-2 hover:rotate-0 transition-all duration-700">
                 <img 
-                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1600&auto=format&fit=crop" 
-                  alt="Healthy Bowl of Food"
+                  src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=2070" 
+                  alt="Traditional Indian Bengali Thali with Rice, Dal, Fish Curry, Veggies and Salad"
                   className="rounded-[2.5rem] shadow-2xl border-8 border-white dark:border-slate-800 w-full object-cover h-[400px] md:h-[500px]"
                 />
              </div>

@@ -30,7 +30,6 @@ const FoodComparison: React.FC<FoodComparisonProps> = ({ lang }) => {
                 </th>
                 <th className="p-4 text-center font-bold text-green-700 dark:text-green-400 bg-[#FFF8E1] dark:bg-slate-950 border-x border-orange-200 dark:border-slate-800 w-1/5 scale-105 shadow-md relative z-0">
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl mb-1">🥘</span>
                     {t.col_bhuk}
                     <span className="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full mt-1 border border-green-200">RECOMMENDED</span>
                   </div>

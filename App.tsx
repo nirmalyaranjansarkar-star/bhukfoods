@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useLocation, NavLink as RouterNavLink } from 'react-router-dom';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Stories from './pages/Stories';
@@ -8,11 +8,13 @@ import Agarpara from './pages/Agarpara';
 import Sodepur from './pages/Sodepur';
 import Belgharia from './pages/Belgharia';
 import Kolkata from './pages/Kolkata';
+import JobOpportunity from './pages/JobOpportunity';
 import Terms from './pages/Terms';
 import Refund from './pages/Refund';
 import Privacy from './pages/Privacy';
 import BhukLogo from './components/BhukLogo';
 import VisitorCounter from './components/VisitorCounter';
+import Chatbot from './components/Chatbot';
 import { Language } from './types';
 import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL } from './constants';
 
@@ -67,10 +69,55 @@ const App: React.FC = () => {
 
   const t = TRANSLATIONS[lang];
 
-  const NavLink: React.FC<{ to?: string; href?: string; children: React.ReactNode }> = ({ to, href, children }) => {
-    const className = "hidden md:block text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#D32F2F] dark:hover:text-[#D32F2F] transition-colors relative group py-2";
-    if (to) return <Link to={to} className={className}>{children}</Link>;
-    return <a href={href} className={className}>{children}</a>;
+  const NavLink: React.FC<{ to?: string; href?: string; children: React.ReactNode; isNew?: boolean }> = ({ to, href, children, isNew }) => {
+    const baseClasses = "hidden md:flex items-center gap-1.5 text-sm font-semibold transition-colors relative group py-2";
+    const activeClasses = "text-[#D32F2F]";
+    const inactiveClasses = "text-slate-700 dark:text-slate-200 hover:text-[#D32F2F] dark:hover:text-[#D32F2F]";
+
+    const content = (
+      <>
+        {children}
+        {isNew && <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>}
+      </>
+    );
+
+    if (to) {
+      const isHome = to === "/";
+      return (
+        <RouterNavLink 
+          to={to} 
+          end={isHome}
+          className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+        >
+          {content}
+        </RouterNavLink>
+      );
+    }
+    
+    // For external links or anchor links
+    return <a href={href} className={`${baseClasses} ${inactiveClasses}`}>{content}</a>;
+  };
+  
+  const MobileNavLink: React.FC<{ to: string; children: React.ReactNode; isNew?: boolean }> = ({ to, children, isNew }) => {
+    const baseClasses = "block py-3 px-4 rounded-xl font-bold text-lg transition-colors";
+    const activeClasses = "bg-orange-50 dark:bg-slate-800 text-[#D32F2F]";
+    const inactiveClasses = "hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200";
+    
+    const isHome = to === "/";
+
+    return (
+      <RouterNavLink 
+        to={to} 
+        onClick={closeMobileMenu}
+        end={isHome}
+        className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+      >
+        <div className="flex items-center gap-2">
+          {children}
+          {isNew && <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>}
+        </div>
+      </RouterNavLink>
+    );
   };
 
   const PolicyLink: React.FC<{ url: string; children: React.ReactNode; className?: string }> = ({ url, children, className }) => {
@@ -103,7 +150,7 @@ const App: React.FC = () => {
               <NavLink to="/stories">{t.nav_stories}</NavLink>
               <NavLink to="/recipes">{t.nav_recipes}</NavLink>
               <NavLink href="/#plans">{t.nav_plans}</NavLink>
-              <NavLink href="/#calculator">{t.nav_calc}</NavLink>
+              <NavLink to="/jobs" isNew>{t.nav_jobs}</NavLink>
               
               <div className="relative group hidden md:block">
                 <button className="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#D32F2F] dark:hover:text-[#D32F2F] transition-colors flex items-center gap-1 py-2">
@@ -165,11 +212,11 @@ const App: React.FC = () => {
           {/* Mobile Menu Overlay */}
           <div className={`md:hidden absolute top-20 left-0 w-full bg-white dark:bg-slate-900 border-t border-orange-100 dark:border-slate-800 shadow-2xl transition-all duration-300 ease-in-out z-40 overflow-hidden ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
             <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-5rem)] overflow-y-auto pb-20">
-              <Link to="/" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_home}</Link>
-              <Link to="/stories" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_stories}</Link>
-              <Link to="/recipes" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_recipes}</Link>
+              <MobileNavLink to="/">{t.nav_home}</MobileNavLink>
+              <MobileNavLink to="/stories">{t.nav_stories}</MobileNavLink>
+              <MobileNavLink to="/recipes">{t.nav_recipes}</MobileNavLink>
               <a href="/#plans" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_plans}</a>
-              <a href="/#calculator" onClick={closeMobileMenu} className="block py-3 px-4 rounded-xl hover:bg-orange-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-lg">{t.nav_calc}</a>
+              <MobileNavLink to="/jobs" isNew>{t.nav_jobs}</MobileNavLink>
               
               <div className="my-2 border-t border-slate-100 dark:border-slate-800"></div>
               
@@ -178,7 +225,6 @@ const App: React.FC = () => {
               <Link to="/terms" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_terms}</Link>
               <Link to="/refund" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_refund}</Link>
               <Link to="/privacy" onClick={closeMobileMenu} className="block py-2 px-4 text-slate-600 dark:text-slate-300 hover:text-[#D32F2F]">{t.policy_privacy}</Link>
-              <Link to="/admin" onClick={closeMobileMenu} className="block py-2 px-4 text-xs text-slate-400 hover:text-slate-600">Owner Login</Link>
 
               <div className="pt-4 mt-2">
                 <a 
@@ -203,11 +249,14 @@ const App: React.FC = () => {
             <Route path="/sodepur" element={<Sodepur />} />
             <Route path="/belgharia" element={<Belgharia />} />
             <Route path="/kolkata" element={<Kolkata />} />
+            <Route path="/jobs" element={<JobOpportunity lang={lang} />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<Refund />} />
             <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
+        
+        <Chatbot />
 
         <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
            <div className="container mx-auto px-4">
@@ -229,6 +278,7 @@ const App: React.FC = () => {
                  <h4 className="text-white font-bold mb-4">Quick Links</h4>
                  <ul className="space-y-2 text-sm">
                    <li><a href={NO_MEAL_FORM_URL} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 font-semibold flex items-center gap-1">No Meal Day Claim ↗</a></li>
+                   <li><Link to="/jobs" className="hover:text-[#D32F2F] flex items-center gap-1">Careers & Jobs</Link></li>
                    <li><Link to="/terms" className="hover:text-[#D32F2F]">Terms & Conditions</Link></li>
                    <li><Link to="/refund" className="hover:text-[#D32F2F]">Refund Policy</Link></li>
                  </ul>

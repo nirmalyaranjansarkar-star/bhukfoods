@@ -1,4 +1,3 @@
-
 import { Plan, MarketItem, FAQItem, Testimonial, ResourceItem, BlogPost, GalleryItem, PainPointItem, ComparisonRow, Recipe } from './types';
 
 export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
@@ -6,6 +5,7 @@ export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
 export const SUBSCRIPTION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd9DcmzwhkLPB989NtGE1SouGTwESEfHpl4kGrZbae8TquuYg/viewform';
 export const FREE_RESOURCES_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeOe-Qf2aUaeW7Rc0MB1e3m1qPpiUTYwQiprmuOzFGyCkS0og/viewform';
 export const NO_MEAL_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdqcl4jNWsBMzj6VF5rVJ2eks2CW86V5RuePucAYS6nUpc6nA/viewform?usp=header';
+export const JOB_APPLICATION_FORM_URL = 'https://forms.gle/i2y69MGmSbypL6av7';
 
 export const POLICY_URLS = {
   terms: '/terms',
@@ -32,7 +32,7 @@ export const PLANS: Plan[] = [
     featuresBn: ['দুপুর বা রাতের খাবার', 'সরু চালের ভাত / রুটি', 'সবজি + ডাল', 'মাছ / মাংস / ডিম', 'প্রিমিয়াম ফয়েল প্যাকিং'],
     bestFor: 'Trial / Guests',
     bestForBn: 'ট্রায়াল / অতিথি',
-    image: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 'student',
@@ -45,7 +45,7 @@ export const PLANS: Plan[] = [
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'ভাত/রুটি', 'সবজি', 'ডাল', 'ডিম (সপ্তাহে ২ দিন)'],
     bestFor: 'Students',
     bestForBn: 'ছাত্রছাত্রীদের জন্য',
-    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1606491056845-8c91e7b9b9b0?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 'professional',
@@ -71,7 +71,7 @@ export const PLANS: Plan[] = [
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'নরম ভাত/রুটি', 'মাছ/মাংস (হালকা ঝোল)', 'কম তেল-মসলা', 'সহজপাচ্য সবজি'],
     bestFor: 'Seniors',
     bestForBn: 'বয়স্কদের জন্য',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1625603632941-88d119e34e40?q=80&w=1000&auto=format&fit=crop'
   }
 ];
 
@@ -255,6 +255,49 @@ export const RECIPES: Recipe[] = [
   }
 ];
 
+export const PAIN_POINTS: PainPointItem[] = [
+  {
+    id: 'maid',
+    emoji: '🧹',
+    title: 'The "Maid" Drama',
+    titleBn: 'কাজের মাসির সমস্যা',
+    problem: '"Didi aj asbo na..." or sudden demands for bonuses and holidays.',
+    problemBn: '"দিদি আজ আসবো না..." অথবা হঠাৎ বোনাস বা ছুটির দাবি।',
+    solution: 'Reliable 365-day delivery. Plus, use our "No Meal Day" form to get refunds for days you skip.',
+    solutionBn: '৩৬৫ দিন নিশ্চিত ডেলিভারি। আর যেদিন খাবেন না, "নো মিল ডে" ফর্ম ভরে টাকা ফেরত পান।'
+  },
+  {
+    id: 'grocery',
+    emoji: '🛒',
+    title: 'Grocery Logistics',
+    titleBn: 'বাজার করার ঝক্কি',
+    problem: 'Running out of oil? Carrying heavy bags? Haggling in the heat?',
+    problemBn: 'তেল শেষ? ভারী ব্যাগ বয়ে আনা? রোদে দাঁড়িয়ে দরদাম করা?',
+    solution: 'We source fresh wholesale ingredients daily. You just eat.',
+    solutionBn: 'আমরা রোজ টাটকা পাইকারি বাজার করি। আপনি শুধু খাওয়ার আনন্দ নিন।'
+  },
+  {
+    id: 'breakfast',
+    emoji: '🥟',
+    title: 'The Kachori Trap',
+    titleBn: 'রাস্তার ধারের ব্রেকফাস্ট',
+    problem: 'Eating oily roadside Kachori or skipping breakfast in the morning rush?',
+    problemBn: 'রোজ সকালে রাস্তার তেলচপচপে কচুরি খাচ্ছেন বা না খেয়েই বেরোচ্ছেন?',
+    solution: 'Healthy, home-style breakfast delivered before you leave for work.',
+    solutionBn: 'অফিসে বেরোনোর আগেই বাড়িতে পৌঁছে যাবে স্বাস্থ্যকর ব্রেকফাস্ট।'
+  },
+  {
+    id: 'admin',
+    emoji: '🤯',
+    title: 'The "Kitchen Manager" Trap',
+    titleBn: 'রান্নাঘর সামলানোর চাপ',
+    problem: 'Gas booking, grocery runs, maid salary, washing dishes, equipment maintenance...',
+    problemBn: 'গ্যাস বুকিং, বাজার করা, মাসির মাইনে, বাসন মাজা, রান্নাঘর পরিষ্কার...',
+    solution: 'Fire yourself as the manager. One subscription covers everything.',
+    solutionBn: 'ম্যানেজারের দায়িত্ব ছাড়ুন। এক সাবস্ক্রিপশনেই সব সমস্যার সমাধান।'
+  }
+];
+
 export const RESOURCES: ResourceItem[] = [
   {
     id: '1',
@@ -324,7 +367,7 @@ export const FAQS: FAQItem[] = [
     question: 'How do I pay for the subscription?',
     questionBn: 'সাবস্ক্রিপশনের টাকা কীভাবে দেব?',
     answer: 'You can pay via UPI (GPay/PhonePe), Bank Transfer, or Cash on the first day of delivery. Subscriptions are prepaid.',
-    answerBn: 'আপনি UPI (GPay/PhonePe), ব্যাঙ্ক ট্রান্সফার বা প্রথম দিন ক্যাশ দিতে পারেন। সাবস্ক্রিপশন প্রিপেইড।'
+    answerBn: 'আপনি UPI (GPay/PhonePe), ব্যাঙ্ক ট্রান্সফার বা প্রথম দিন ক্যাש দিতে পারেন। সাবস্ক্রিপশন প্রিপেইড।'
   }
 ];
 
@@ -502,49 +545,42 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'Sep 15, 2024',
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070',
     readTime: '4 min'
-  }
-];
-
-export const PAIN_POINTS: PainPointItem[] = [
-  {
-    id: 'maid',
-    emoji: '🧹',
-    title: 'The "Maid" Drama',
-    titleBn: 'কাজের মাসির সমস্যা',
-    problem: '"Didi aj asbo na..." or sudden demands for bonuses and holidays.',
-    problemBn: '"দিদি আজ আসবো না..." অথবা হঠাৎ বোনাস বা ছুটির দাবি।',
-    solution: 'Reliable 365-day delivery. Plus, use our "No Meal Day" form to get refunds for days you skip.',
-    solutionBn: '৩৬৫ দিন নিশ্চিত ডেলিভারি। আর যেদিন খাবেন না, "নো মিল ডে" ফর্ম ভরে টাকা ফেরত পান।'
   },
   {
-    id: 'grocery',
-    emoji: '🛒',
-    title: 'Grocery Logistics',
-    titleBn: 'বাজার করার ঝক্কি',
-    problem: 'Running out of oil? Carrying heavy bags? Haggling in the heat?',
-    problemBn: 'তেল শেষ? ভারী ব্যাগ বয়ে আনা? রোদে দাঁড়িয়ে দরদাম করা?',
-    solution: 'We source fresh wholesale ingredients daily. You just eat.',
-    solutionBn: 'আমরা রোজ টাটকা পাইকারি বাজার করি। আপনি শুধু খাওয়ার আনন্দ নিন।'
+    id: '4',
+    title: 'The Sunday Mutton Legacy',
+    titleBn: 'রবিবারের মটন: বাঙালির আবেগ',
+    excerpt: 'Sunday afternoon, a nap, and Mutton Curry. Why this tradition defines a Bengali household.',
+    excerptBn: 'রবিবার দুপুর, ভাত ঘুম, আর মটন কারি। কেন এই ঐতিহ্য প্রতিটি বাঙালি পরিবারকে সংজ্ঞায়িত করে।',
+    content: 'For a Bengali, Sunday is not just a holiday; it is an emotion centered around "Lal Mutton er Jhol" (Red Mutton Curry) and Rice. The aroma of slow-cooked meat with big chunks of potato wafting through the house marks the peak of the weekend.\n\nAt Bhuk Foods, we respect this tradition. Every Sunday, our kitchen transforms. We procure the freshest Rewaji Khasi (Goat Meat) from the local market. The meat is marinated overnight with raw papaya, yogurt, and our special spice mix to ensure it melts in your mouth. We believe that no matter how busy life gets, you should never miss out on your Sunday Mutton bliss.',
+    contentBn: 'বাঙালির কাছে রবিবার মানে শুধু ছুটি নয়, এটি একটি আবেগ যার কেন্দ্রবিন্দুতে থাকে "লাল মটনের ঝোল" আর ভাত। ধীর আঁচে রান্না করা মাংস আর বড় আলুর সুগন্ধ যখন বাড়ি জুড়ে ছড়িয়ে পড়ে, তখনই সপ্তাহান্তের সার্থকতা।\n\nভুক ফুডস-এ আমরা এই ঐতিহ্যকে শ্রদ্ধা করি। প্রতি রবিবার আমাদের কিচেন বদলে যায়। আমরা বাজার থেকে সেরা রেওয়াজি খাসির মাংস আনি। কাঁচা পেঁপে, টক দই এবং আমাদের স্পেশাল মশলা দিয়ে মাংস সারারাত ম্যারিনেট করা হয় যাতে তা মুখে দিলেই গলে যায়। আমরা বিশ্বাস করি, জীবন যত ব্যস্তই হোক না কেন, রবিবারের মটন থেকে আপনি যেন বঞ্চিত না হন।',
+    date: 'Nov 05, 2024',
+    image: 'https://images.unsplash.com/photo-1574653853027-5386a527c17f?q=80&w=1000',
+    readTime: '3 min'
   },
   {
-    id: 'breakfast',
-    emoji: '🥟',
-    title: 'The Kachori Trap',
-    titleBn: 'রাস্তার ধারের ব্রেকফাস্ট',
-    problem: 'Eating oily roadside Kachori or skipping breakfast in the morning rush?',
-    problemBn: 'রোজ সকালে রাস্তার তেলচপচপে কচুরি খাচ্ছেন বা না খেয়েই বেরোচ্ছেন?',
-    solution: 'Healthy, home-style breakfast delivered before you leave for work.',
-    solutionBn: 'অফিসে বেরোনোর আগেই বাড়িতে পৌঁছে যাবে স্বাস্থ্যকর ব্রেকফাস্ট।'
+    id: '5',
+    title: 'Winter Pithe Puli: A Sweet Symphony',
+    titleBn: 'শীতের পিঠে পুলি: মিষ্টি সুর',
+    excerpt: 'As the temperature drops, the craving for Nolen Gur rises. Celebrating the winter harvest.',
+    excerptBn: 'তাপমাত্রা কমার সাথে সাথে নলেন গুড়ের চাহিদা বাড়ে। শীতের নবান্ন উৎসবের উদযাপন।',
+    content: 'Winter in Bengal is incomplete without Pithe Puli. Made from rice flour, coconut, milk, and the star ingredient—Nolen Gur (Date Palm Jaggery)—these sweets are a labor of love.\n\nFrom Patishapta to Gokul Pithe, these delicacies are traditionally made during Poush Sankranti to celebrate the harvest. While modern life makes it hard to spend hours in the kitchen making them, Bhuk Foods brings these seasonal treats to your meal box during winter months. We source authentic Nolen Gur from the villages to ensure the flavor is uncompromised.',
+    contentBn: 'পিঠে পুলি ছাড়া বাংলায় শীত অসম্পূর্ণ। চালের গুঁড়ো, নারকেল, দুধ এবং প্রধান উপকরণ—নলেন গুড় দিয়ে তৈরি এই মিষ্টিগুলো ভালোবাসার প্রতীক।\n\nপাটিসাপটা থেকে গোকুল পিঠে—পৌষ সংক্রান্তিতে নবান্ন উদযাপনের জন্য এই পদগুলো তৈরি হয়। আধুনিক জীবনে রান্নাঘরে ঘণ্টার পর ঘণ্টা সময় দেওয়া কঠিন হলেও, ভুক ফুডস শীতের মাসগুলোতে এই মরশুমি মিষ্টিগুলো আপনার মিল বক্সে পৌঁছে দেয়। খাঁটি স্বাদ বজায় রাখতে আমরা গ্রাম থেকে আসল নলেন গুড় সংগ্রহ করি।',
+    date: 'Dec 10, 2024',
+    image: 'https://images.unsplash.com/photo-1605333396827-2c96937b243f?q=80&w=1000',
+    readTime: '2 min'
   },
   {
-    id: 'admin',
-    emoji: '🤯',
-    title: 'The "Kitchen Manager" Trap',
-    titleBn: 'রান্নাঘর সামলানোর চাপ',
-    problem: 'Gas booking, grocery runs, maid salary, washing dishes, equipment maintenance...',
-    problemBn: 'গ্যাস বুকিং, বাজার করা, মাসির মাইনে, বাসন মাজা, রান্নাঘর পরিষ্কার...',
-    solution: 'Fire yourself as the manager. One subscription covers everything.',
-    solutionBn: 'ম্যানেজারের দায়িত্ব ছাড়ুন। এক সাবস্ক্রিপশনেই সব সমস্যার সমাধান।'
+    id: '6',
+    title: 'Why We Don\'t Use Baking Soda',
+    titleBn: 'কেন আমরা খাবারে সোডা দিই না?',
+    excerpt: 'Soda makes cooking faster but digestion harder. We choose health over shortcuts.',
+    excerptBn: 'সোডা রান্না দ্রুত করে কিন্তু হজম কঠিন করে। আমরা শর্টকাটের চেয়ে স্বাস্থ্যকে বেছে নিই।',
+    content: 'Many commercial kitchens use Baking Soda (Sodium Bicarbonate) to cook pulses (dal) and vegetables faster or to make them look greener. While this saves time and gas, it destroys essential vitamins (especially Vitamin B and C) and can wreak havoc on your digestion, causing bloating and acidity.\n\nAt Bhuk Foods, we have a strict "No Soda" policy. We soak our pulses overnight and slow-cook them to ensure they are soft and digestible naturally. This might take longer and cost us more in fuel, but it ensures that the food you eat acts as medicine for your body, not a burden.',
+    contentBn: 'অনেক বাণিজ্যিক রান্নাঘরে ডাল এবং সবজি দ্রুত সেদ্ধ করতে বা সবুজ দেখাতে বেকিং সোডা ব্যবহার করা হয়। এতে সময় এবং গ্যাস বাঁচলেও, এটি প্রয়োজনীয় ভিটামিন (বিশেষ করে ভিটামিন বি এবং সি) নষ্ট করে এবং হজমের বারোটা বাজিয়ে দেয়, যার ফলে গ্যাস এবং অম্বল হয়।\n\nভুক ফুডস-এ আমাদের কড়া "নো সোডা" নীতি আছে। আমরা ডাল সারারাত ভিজিয়ে রাখি এবং ধীর আঁচে রান্না করি যাতে তা প্রাকৃতিকভাবে নরম এবং সহজপাচ্য হয়। এতে হয়তো সময় বেশি লাগে এবং গ্যাসের খরচ বাড়ে, কিন্তু এটি নিশ্চিত করে যে খাবারটি আপনার শরীরের জন্য ওষুধের মতো কাজ করবে, বোঝা হবে না।',
+    date: 'Aug 20, 2024',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000',
+    readTime: '3 min'
   }
 ];
 
@@ -557,6 +593,7 @@ export const TRANSLATIONS = {
     nav_stories: 'Stories',
     nav_policies: 'Policies',
     nav_recipes: 'Famous Recipes',
+    nav_jobs: 'Jobs',
     hero_headline: 'India\'s First Kitchen Substitution Service.',
     hero_subhead: 'Delete your grocery apps. Sell your stove. We aren\'t just a tiffin service; we are your complete kitchen replacement in Agarpara, Sodepur & Belgharia.',
     hero_cta: 'Start Your Subscription',
@@ -601,7 +638,7 @@ export const TRANSLATIONS = {
     policy_refund: 'Return & Refund Policy',
     policy_privacy: 'Privacy Policy',
     comp_title: 'Monthly Food Cost & Lifestyle Comparison',
-    comp_subtitle: 'Why smart families in Agarpara are switching to Bhuk Foods.',
+    comp_subtitle: 'Why smart families in Agarpara and surroundings are switching to Bhuk Foods.',
     col_bhuk: 'Bhuk Foods',
     col_street: 'Street Food',
     col_apps: 'Delivery Apps',
@@ -618,11 +655,12 @@ export const TRANSLATIONS = {
   bn: {
     nav_home: 'হোম',
     nav_plans: 'মিল ও প্ল্যান',
-    nav_calc: 'সেভিংস ক্যালকুলেটর',
+    nav_calc: 'সেভিংস ক্যাল্কুলেটর',
     nav_resources: 'ফ্রি গাইড',
     nav_stories: 'গল্প ও ছবি',
     nav_policies: 'পলিসি',
     nav_recipes: 'বিখ্যাত রেসিপি',
+    nav_jobs: 'চাকরি',
     hero_headline: 'ভারতের প্রথম কিচেন সাবস্টিটিউশন সার্ভিস।',
     hero_subhead: 'বাজার করার অ্যাপ ডিলিট করুন। রান্নার ঝামেলা ভুলে যান। আমরা শুধু টিফিন দিই না, আমরা আপনার রান্নাঘরের সম্পূর্ণ বিকল্প।',
     hero_cta: 'সাবস্ক্রিপশন শুরু করুন',
@@ -667,7 +705,7 @@ export const TRANSLATIONS = {
     policy_refund: 'রিফান্ড পলিসি',
     policy_privacy: 'গোপনীয়তা নীতি',
     comp_title: 'খরচ এবং জীবনযাত্রার তুলনা',
-    comp_subtitle: 'কেন আগরপাড়ার স্মার্ট পরিবারগুলো ভুক ফুডস বেছে নিচ্ছে?',
+    comp_subtitle: 'কেন আগরপাড়ার এবং আশেপাশের স্মার্ট পরিবারগুলো ভুক ফুডস বেছে নিচ্ছে?',
     col_bhuk: 'ভুক ফুডস',
     col_street: 'রাস্তার খাবার',
     col_apps: 'ডেলিভারি অ্যাপ',

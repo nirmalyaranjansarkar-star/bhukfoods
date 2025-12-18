@@ -45,6 +45,9 @@ const MarketWidget: React.FC<MarketWidgetProps> = ({ lang }) => {
           </div>
         ))}
       </div>
+      <div className="text-center text-[10px] text-slate-400 dark:text-slate-500 mt-4">
+        Market data is indicative. Source: <a href="https://wbagrimarketingboard.gov.in/" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-500 dark:hover:text-slate-300">WB Agri Marketing Board</a>
+      </div>
     </div>
   );
 };

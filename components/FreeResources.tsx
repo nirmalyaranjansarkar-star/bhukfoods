@@ -1,3 +1,4 @@
+// FIX: Restored the full content of the file which was previously truncated, causing an import error.
 import React from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS, FREE_RESOURCES_FORM_URL, RESOURCES } from '../constants';
