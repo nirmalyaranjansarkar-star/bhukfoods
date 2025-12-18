@@ -32,7 +32,7 @@ export const PLANS: Plan[] = [
     featuresBn: ['দুপুর বা রাতের খাবার', 'সরু চালের ভাত / রুটি', 'সবজি + ডাল', 'মাছ / মাংস / ডিম', 'প্রিমিয়াম ফয়েল প্যাকিং'],
     bestFor: 'Trial / Guests',
     bestForBn: 'ট্রায়াল / অতিথি',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1626776878426-b73da74d23a1?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 'student',
@@ -41,11 +41,11 @@ export const PLANS: Plan[] = [
     nameBn: 'স্টুডেন্ট সেভার',
     price: 2800,
     perMeal: 30,
-    features: ['3 Meals (Bfast+Lunch+Dinner)', 'Rice/Roti', 'Seasonal Sabji', 'Dal', 'Egg (2x week)'],
-    featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'ভাত/রুটি', 'সবজি', 'ডাল', 'ডিম (সপ্তাহে ২ দিন)'],
+    features: ['Pocket-Friendly Full Day Meals', 'Saves Time For Study', 'Wholesome Home-Style Food', 'Egg Curry Twice a Week', 'No Tiffin Hassle'],
+    featuresBn: ['পকেট-ফ্রেন্ডলি সারাদিনের খাবার', 'পড়াশোনার জন্য সময় বাঁচায়', 'স্বাস্থ্যকর বাড়ির খাবার', 'সপ্তাহে ২ দিন ডিমের কারি', 'টিফিন গোছানোর ঝামেলা নেই'],
     bestFor: 'Students',
     bestForBn: 'ছাত্রছাত্রীদের জন্য',
-    image: 'https://images.unsplash.com/photo-1604152163212-299066f175d0?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1694503598589-4b65282496a7?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 'professional',
@@ -54,8 +54,8 @@ export const PLANS: Plan[] = [
     nameBn: 'অফিস রেডি',
     price: 3500,
     perMeal: 40,
-    features: ['3 Meals (Bfast+Lunch+Dinner)', 'Rice/Roti', 'Chicken/Fish (Alt days)', 'Special Sabji', 'Salad'],
-    featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'ভাত/রুটি', 'মাছ/মাংস (একদিন অন্তর)', 'স্পেশাল সবজি', 'স্যালাড'],
+    features: ['Premium Meals for Professionals', 'Daily Non-Veg Variety (Fish/Chicken)', 'Includes Fresh Salad & Special Sabji', 'Hygienic Alternative to Canteens', 'Save Time on Busy Workdays'],
+    featuresBn: ['পেশাদারদের জন্য প্রিমিয়াম খাবার', 'প্রতিদিন আমিষ বৈচিত্র্য (মাছ/মাংস)', 'ফ্রেশ স্যালাড ও স্পেশাল সবজি', 'ক্যান্টিনের স্বাস্থ্যকর বিকল্প', 'ব্যস্ত দিনে সময় বাঁচায়'],
     bestFor: 'Professionals',
     bestForBn: 'অফিস যাত্রীদের জন্য',
     image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000&auto=format&fit=crop'
@@ -67,11 +67,11 @@ export const PLANS: Plan[] = [
     nameBn: 'সিনিয়র লাইট',
     price: 3000,
     perMeal: 35,
-    features: ['3 Meals (Bfast+Lunch+Dinner)', 'Soft Rice/Roti', 'Chicken/Fish (Light Stew)', 'Less Oil/Spice', 'Digestible Sabji'],
-    featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'নরম ভাত/রুটি', 'মাছ/মাংস (হালকা ঝোল)', 'কম তেল-মসলা', 'সহজপাচ্য সবজি'],
+    features: ['Doctor-Recommended Low Oil/Spice', 'Soft-Cooked, Easy to Digest Food', 'Light Fish/Chicken Stew Daily', 'Ideal for BP & Cholesterol Care', 'Made Fresh with Senior Needs in Mind'],
+    featuresBn: ['ডাক্তারের পরামর্শ অনুযায়ী কম তেল-মসলা', 'নরম ও সহজপাচ্য খাবার', 'প্রতিদিন হালকা মাছ/চিকেন স্টু', 'বিপি ও কোলেস্টেরল রোগীদের জন্য আদর্শ', 'বয়স্কদের জন্য বিশেষভাবে তৈরি'],
     bestFor: 'Seniors',
     bestForBn: 'বয়স্কদের জন্য',
-    image: 'https://images.unsplash.com/photo-1585937421612-70a058417288?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1602882196658-95aa5a01704e?q=80&w=1000&auto=format&fit=crop'
   }
 ];
 
