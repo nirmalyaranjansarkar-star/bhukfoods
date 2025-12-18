@@ -42,8 +42,8 @@ const LeadGen: React.FC<LeadGenProps> = ({ lang }) => {
         </div>
         <div className="order-1 md:order-2 h-64 md:h-full">
             <img 
-              src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800"
-              alt="A collection of Bhuk Foods guides and recipe books including Bachelor's Survival Guide, Brain Fuel, and The Rice Myth"
+              src="https://images.unsplash.com/photo-1543362906-acfc16c67564?q=80&w=1000&auto=format&fit=crop"
+              alt="A cookbook titled 'The Zero Headache Kitchen Guide' by Bhuk Foods"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
         </div>
